@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vehicle & Chopper Hire – Dream Package Adventures</title>
+    <meta name="description" content="Safari vehicle hire – Land Cruiser 4x4 self-drive/chauffeur. Helicopter charters in Nairobi." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <!-- ===== NAVIGATION (copy from index) ===== -->
+    <header class="site-header" id="siteHeader">...</header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hire-hero.jpg'); min-height: 50vh;">
+        <div class="container hero-content">
+            <h1>Vehicle &amp; Helicopter Hire</h1>
+            <p class="hero-sub">Nairobi-based – safari-ready Land Cruisers and luxury helicopter charters.</p>
+        </div>
+    </section>
+
+    <!-- ===== LAND CRUISER ===== -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Land Cruiser 4x4 Hire</h2>
+            <p class="section-sub">Safari-modified pop-top vehicles for self-drive or chauffeur-driven adventures.</p>
+            <div class="grid" style="grid-template-columns: 1fr 1fr; gap:2rem;">
+                <div class="dest-card"><div class="dest-info"><h3>Self-Drive</h3><p>Full insurance, unlimited mileage, airport pickup/drop-off available.</p><p><strong>From $120</strong> / day</p><a href="contact.html" class="btn btn-primary">Enquire Now</a></div></div>
+                <div class="dest-card"><div class="dest-info"><h3>Chauffeur-Driven</h3><p>Professional English-speaking driver/guide, all fuel and park fees included.</p><p><strong>From $180</strong> / day</p><a href="contact.html" class="btn btn-primary">Enquire Now</a></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== HELICOPTER ===== -->
+    <section class="section" style="background: var(--color-light);">
+        <div class="container">
+            <h2 class="section-title">Helicopter Charter Hire</h2>
+            <p class="section-sub">Scenic flights over Nairobi, VIP transfers, and aerial safaris.</p>
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+                <div class="dest-card"><div class="dest-info"><h3>Scenic Flights</h3><p>See Nairobi National Park, the Great Rift Valley, and more.</p><p><strong>From $1,200</strong> / hour</p><a href="contact.html" class="btn btn-primary">Enquire Now</a></div></div>
+                <div class="dest-card"><div class="dest-info"><h3>Maasai Mara Transfers</h3><p>Fly directly to the Mara – skip the long road journey.</p><p><strong>From $2,800</strong> one-way</p><a href="contact.html" class="btn btn-primary">Enquire Now</a></div></div>
+                <div class="dest-card"><div class="dest-info"><h3>Aerial Safaris</h3><p>Combine flying with wildlife viewing from above.</p><p><strong>From $1,500</strong> / hour</p><a href="contact.html" class="btn btn-primary">Enquire Now</a></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BOOKING ENQUIRY FORM ===== -->
+    <section class="section">
+        <div class="container" style="max-width:700px; margin:0 auto;">
+            <h2 class="section-title">Hire Enquiry</h2>
+            <form id="hireForm" novalidate>
+                <div style="display:grid; gap:1rem;">
+                    <input type="text" placeholder="Full Name" required />
+                    <input type="tel" placeholder="Phone Number" required />
+                    <input type="text" placeholder="Preferred Dates (e.g. 10-15 Dec)" />
+                    <select required>
+                        <option value="">Select Service</option>
+                        <option>Land Cruiser Self-Drive</option>
+                        <option>Land Cruiser Chauffeur-Driven</option>
+                        <option>Helicopter Scenic</option>
+                        <option>Helicopter Mara Transfer</option>
+                        <option>Helicopter Aerial Safari</option>
+                    </select>
+                    <textarea rows="4" placeholder="Additional details (number of people, special requests...)"></textarea>
+                    <button type="submit" class="btn btn-primary">Send Enquiry</button>
+                    <div class="form-feedback"></div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER, WHATSAPP, CHATBOT (copy) ===== -->
+</body>
+</html>

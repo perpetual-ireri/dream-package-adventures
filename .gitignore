@@ -1,0 +1,14 @@
+﻿# OS files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Editor folders
+.vscode/
+.idea/
+
+# Visual Studio (in case you keep them)
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user

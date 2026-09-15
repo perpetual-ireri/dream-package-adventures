@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us – Dream Package Adventures</title>
+    <meta name="description" content="Get in touch with Dream Package Adventures – Kenya safari bookings, vehicle hire, and travel enquiries." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <!-- ===== NAVIGATION (copy from index) ===== -->
+    <header class="site-header" id="siteHeader">...</header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/contact-hero.jpg'); min-height: 40vh;">
+        <div class="container hero-content">
+            <h1>Contact Us</h1>
+            <p class="hero-sub">We're here to help – reach out for safari bookings, hire enquiries, or travel advice.</p>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT FORM & DETAILS ===== -->
+    <section class="section">
+        <div class="container">
+            <div class="grid" style="grid-template-columns: 1fr 1fr; gap:3rem;">
+                <!-- Form -->
+                <div>
+                    <h2 class="section-title" style="text-align:left;">Send a Message</h2>
+                    <form id="contactForm" novalidate>
+                        <div style="display:grid; gap:1rem;">
+                            <input type="text" placeholder="Full Name" required />
+                            <input type="email" placeholder="Email Address" required />
+                            <input type="tel" placeholder="Phone Number" />
+                            <select required>
+                                <option value="">Subject</option>
+                                <option>Kenya Safari</option>
+                                <option>Tanzania/Uganda/Botswana Safari</option>
+                                <option>Local Adventure</option>
+                                <option>International Package</option>
+                                <option>Vehicle Hire</option>
+                                <option>Chopper Hire</option>
+                                <option>Other</option>
+                            </select>
+                            <textarea rows="5" placeholder="Your message..." required></textarea>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                            <div class="form-feedback"></div>
+                            <!-- Backend placeholder -->
+                            <!-- To connect to a real backend, replace the submit handler with an AJAX call to Formspree, PHP mailer, or your own endpoint -->
+                        </div>
+                    </form>
+                </div>
+                <!-- Contact info & map -->
+                <div>
+                    <h2 class="section-title" style="text-align:left;">Reach Us</h2>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+254758273319">+254 758 273 319</a></p>
+                    <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/254758273319" target="_blank">Chat on WhatsApp</a></p>
+                    <p><i class="fas fa-envelope"></i> info@dreampackageadventures.com</p>
+                    <p><i class="fas fa-clock"></i> Office Hours: Mon–Fri 8:00 AM – 6:00 PM (EAT)</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+                    <!-- Google Map placeholder -->
+                    <div style="background:#ddd; height:200px; border-radius:var(--radius); margin-top:1rem; display:flex; align-items:center; justify-content:center; color:#888; font-weight:500;">
+                        <i class="fas fa-map" style="margin-right:0.5rem;"></i> Google Map – Nairobi, Kenya
+                        <!-- Replace the above with an actual iframe embed from Google Maps -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER, WHATSAPP, CHATBOT (copy) ===== -->
+</body>
+</html>

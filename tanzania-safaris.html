@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tanzania Safaris – Dream Package Adventures</title>
+    <meta name="description" content="Tanzania safari packages – Serengeti, Ngorongoro Crater, Zanzibar beach extensions." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <!-- ===== NAVIGATION (same) ===== -->
+    <header class="site-header" id="siteHeader">
+        <div class="container nav-container">
+            <div class="logo"><a href="index.html"><span class="logo-icon"><i class="fas fa-compass"></i></span><span class="logo-text">Dream Package<span>Adventures</span></span></a></div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+            <nav class="main-nav" id="mainNav" role="navigation" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Safaris <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="kenya-safaris.html">Kenya Safaris</a></li>
+                            <li><a href="tanzania-safaris.html" class="active">Tanzania Safaris</a></li>
+                            <li><a href="uganda-safaris.html">Uganda Safaris</a></li>
+                            <li><a href="botswana-safaris.html">Botswana Safaris</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Getaways <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="local-adventures.html">Local Adventures</a></li>
+                            <li><a href="international-packages.html">International Packages</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="car-and-chopper-hire.html">Vehicle &amp; Chopper Hire</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('images/tanzania-hero.jpg'); min-height: 50vh;">
+        <div class="container hero-content">
+            <h1>Tanzania Safaris</h1>
+            <p class="hero-sub">Serengeti plains, Ngorongoro's crater, and the spice islands of Zanzibar.</p>
+        </div>
+    </section>
+
+    <!-- ===== DESTINATIONS ===== -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Top Tanzania Destinations</h2>
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+                <div class="dest-card"><img src="images/serengeti.jpg" alt="Serengeti" loading="lazy" /><div class="dest-info"><h3>Serengeti</h3><p>Endless plains, the Great Migration, and exceptional predator sightings.</p></div></div>
+                <div class="dest-card"><img src="images/ngorongoro.jpg" alt="Ngorongoro Crater" loading="lazy" /><div class="dest-info"><h3>Ngorongoro Crater</h3><p>A UNESCO wonder – a collapsed volcano teeming with wildlife.</p></div></div>
+                <div class="dest-card"><img src="images/zanzibar.jpg" alt="Zanzibar" loading="lazy" /><div class="dest-info"><h3>Zanzibar</h3><p>Turquoise waters, historic Stone Town, and beach relaxation.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ITINERARIES ===== -->
+    <section class="section" style="background: var(--color-light);">
+        <div class="container">
+            <h2 class="section-title">Sample Tanzania Itineraries</h2>
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <div class="dest-card"><img src="images/tz-itinerary-4d.jpg" alt="4 Days Serengeti & Ngorongoro" loading="lazy" /><div class="dest-info"><h3>4 Days Serengeti & Ngorongoro</h3><p>Two world-class parks in one short safari – big game and crater views.</p><p><strong>From $750</strong> p.p.</p><a href="contact.html" class="btn btn-primary">Enquire Now</a></div></div>
+                <div class="dest-card"><img src="images/tz-itinerary-6d.jpg" alt="6 Days Tanzania Safari & Zanzibar" loading="lazy" /><div class="dest-info"><h3>6 Days Safari & Zanzibar</h3><p>Serengeti, Ngorongoro, then fly to Zanzibar for 2 nights on the beach.</p><p><strong>From $1,200</strong> p.p.</p><a href="contact.html" class="btn btn-primary">Enquire Now</a></div></div>
+                <div class="dest-card"><img src="images/tz-itinerary-8d.jpg" alt="8 Days Ultimate Tanzania" loading="lazy" /><div class="dest-info"><h3>8 Days Ultimate Tanzania</h3><p>Lake Manyara, Serengeti, Ngorongoro, and a Tarangire game drive.</p><p><strong>From $1,650</strong> p.p.</p><a href="contact.html" class="btn btn-primary">Enquire Now</a></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">... (copy the exact same footer from kenya-safaris.html) ...</footer>
+    <a href="https://wa.me/2547XXXXXXX" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+    <div class="chatbot-float">... (copy the exact same chatbot from kenya-safaris.html) ...</div>
+    <script src="js/main.js"></script><script src="js/chatbot.js"></script>
+</body>
+</html>

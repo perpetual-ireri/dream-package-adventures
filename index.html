@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dream Package Adventures – Kenya Safari & Travel</title>
+    <meta name="description" content="Dream Package Adventures: Kenya safari tours, Tanzania, Uganda & Botswana. Local getaways, international packages, vehicle & chopper hire. Your gateway to Africa's wild heart." />
+
+    <!-- ===== FAVICON (using your logo) ===== -->
+    <link rel="icon" type="image/jpeg" href="images/logo.jpeg" />
+    <link rel="shortcut icon" type="image/jpeg" href="images/logo.jpeg" />
+    <link rel="apple-touch-icon" href="images/logo.jpeg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- ===== CUSTOM COMPACT LAYOUT OVERRIDES ===== -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #fff;
+            color: #222;
+        }
+
+        /* ----- TOP BAR (logo + brand name + contacts + socials) ----- */
+        .top-bar {
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            padding: 0.2rem 0;
+            font-size: 0.8rem;
+            width: 100%;
+        }
+
+        .top-bar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 0 1.2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            min-height: 48px;
+        }
+
+        /* ---- LOGO + BRAND NAME (left) ---- */
+        .top-bar-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            flex-shrink: 0;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .top-bar-logo img {
+            height: 48px !important;
+            width: auto !important;
+            max-height: 48px !important;
+            object-fit: contain;
+            display: block;
+        }
+
+        .top-bar-brand-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #1e1e1e;
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+            line-height: 1.2;
+        }
+
+        .top-bar-brand-name span {
+            display: block;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.6rem;
+            font-weight: 400;
+            color: #b8860b;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* ---- CONTACTS + SOCIALS (right) ---- */
+        .top-bar-contacts {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.2rem;
+            justify-content: flex-end;
+            flex: 1 1 auto;
+        }
+
+        .top-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.78rem;
+            white-space: nowrap;
+            transition: color 0.2s;
+        }
+
+        .top-bar-item i {
+            font-size: 0.9rem;
+            color: #b8860b;
+            width: 1.1rem;
+            text-align: center;
+        }
+
+        .top-bar-item:hover {
+            color: #b8860b;
+        }
+
+        /* ---- SOCIAL ICONS ---- */
+        .top-bar-socials {
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            margin-left: 0.2rem;
+        }
+
+        .top-bar-socials a {
+            color: #4a4a4a;
+            font-size: 0.9rem;
+            transition: color 0.2s, transform 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.6rem;
+            height: 1.6rem;
+            border-radius: 50%;
+            background: #f5f5f5;
+            text-decoration: none;
+        }
+
+        .top-bar-socials a:hover {
+            color: #fff;
+            background: #b8860b;
+            transform: scale(1.05);
+        }
+
+        /* ----- MAIN NAV – COMPACT ----- */
+        .site-header {
+            background: #fff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .nav-bar {
+            padding: 0.15rem 0;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            min-height: 38px;
+            position: relative;
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.2rem;
+            flex-direction: column;
+            gap: 4px;
+            margin-right: auto;
+        }
+
+        .hamburger .bar {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: #222;
+            border-radius: 2px;
+            transition: 0.2s;
+        }
+
+        .main-nav {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-list {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            list-style: none;
+            gap: 0.2rem 0.8rem;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-list li {
+            position: relative;
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+        }
+
+        .nav-list li a {
+            text-decoration: none;
+            color: #1e1e1e;
+            padding: 0.25rem 0.15rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            transition: color 0.2s;
+            white-space: nowrap;
+        }
+
+        .nav-list li a:hover,
+        .nav-list li a.active {
+            color: #b8860b;
+        }
+
+        .nav-list li a.active {
+            font-weight: 600;
+        }
+
+        .dropdown-toggle i {
+            font-size: 0.6rem;
+            margin-left: 0.15rem;
+            color: #888;
+            transition: transform 0.2s;
+        }
+
+        .dropdown:hover .dropdown-toggle i {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+            border-radius: 6px;
+            padding: 0.4rem 0;
+            min-width: 170px;
+            list-style: none;
+            z-index: 1000;
+            border: 1px solid #f0f0f0;
+            margin-top: 0.2rem;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu li a {
+            padding: 0.4rem 1rem;
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: #333;
+            display: block;
+            white-space: nowrap;
+        }
+
+        .dropdown-menu li a:hover {
+            background: #f9f6f0;
+            color: #b8860b;
+        }
+
+        /* ----- RESPONSIVE ----- */
+        @media (max-width: 1100px) {
+            .top-bar-brand-name {
+                font-size: 0.85rem;
+            }
+            .top-bar-brand-name span {
+                font-size: 0.55rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .top-bar-inner {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.3rem;
+            }
+
+            .top-bar-contacts {
+                justify-content: center;
+                flex: 1 1 100%;
+                padding-bottom: 0.2rem;
+                gap: 0.5rem 0.9rem;
+            }
+
+            .top-bar-item {
+                font-size: 0.7rem;
+            }
+
+            .top-bar-logo img {
+                height: 38px !important;
+                max-height: 38px !important;
+            }
+
+            .top-bar-brand-name {
+                font-size: 0.8rem;
+            }
+
+            .nav-list {
+                gap: 0.1rem 0.5rem;
+            }
+
+            .nav-list li {
+                font-size: 0.7rem;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .main-nav {
+                display: none;
+                width: 100%;
+                justify-content: flex-start;
+            }
+
+            .main-nav.open {
+                display: block;
+            }
+
+            .nav-list {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.2rem;
+                padding: 0.5rem 0;
+                width: 100%;
+            }
+
+            .nav-list li {
+                width: 100%;
+                font-size: 0.8rem;
+            }
+
+            .nav-list li a {
+                padding: 0.5rem 0.8rem;
+                width: 100%;
+            }
+
+            .dropdown-menu {
+                position: static;
+                box-shadow: none;
+                border: none;
+                padding-left: 1rem;
+                background: #fafafa;
+                border-radius: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .top-bar-brand-name {
+                font-size: 0.7rem;
+            }
+            .top-bar-brand-name span {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .top-bar-item span {
+                display: none;
+            }
+
+            .top-bar-item i {
+                font-size: 1rem;
+            }
+
+            .top-bar-socials a {
+                width: 1.8rem;
+                height: 1.8rem;
+                font-size: 0.85rem;
+            }
+
+            .top-bar-logo img {
+                height: 34px !important;
+            }
+
+            .top-bar-brand-name {
+                font-size: 0.65rem;
+            }
+        }
+
+        .hero {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================
+         TOP BAR: Logo + Brand Name (left) + Contacts & socials (right)
+         ============================================================ -->
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+
+            <!-- LEFT: Logo + Brand Name -->
+            <a href="index.html" class="top-bar-logo">
+               <img src="images/logo.jpeg" alt="Dream Package Adventures logo" />
+               <div class="top-bar-brand-name">
+                   Dream Package Adventures
+                   <span>Safari &amp; Travel</span>
+               </div>
+            </a>
+
+            <!-- RIGHT: Contacts + socials -->
+            <div class="top-bar-contacts">
+
+                <a href="mailto:info@dreampackageadventures.com" class="top-bar-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@dreampackageadventures.com</span>
+                </a>
+
+                <a href="tel:+254758273319" class="top-bar-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+254 758 273 319</span>
+                </a>
+
+                <div class="top-bar-socials">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         MAIN NAV BAR (sticky, compact, under the top bar)
+         ============================================================ -->
+    <header class="site-header" id="siteHeader">
+        <div class="nav-bar">
+            <div class="container nav-container">
+
+                <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                </button>
+
+                <nav class="main-nav" id="mainNav" role="navigation" aria-label="Main navigation">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">Safaris <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="kenya-safaris.html">Kenya Safaris</a></li>
+                                <li><a href="tanzania-safaris.html">Tanzania Safaris</a></li>
+                                <li><a href="uganda-safaris.html">Uganda Safaris</a></li>
+                                <li><a href="botswana-safaris.html">Botswana Safaris</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">Getaways <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="local-adventures.html">Local Adventures</a></li>
+                                <li><a href="international-packages.html">International Packages</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="car-and-chopper-hire.html">Vehicle &amp; Chopper Hire</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('images/hero-kenya-safari.jpg');">
+        <div class="container hero-content">
+            <h1>Explore Kenya's Wild Heart</h1>
+            <p class="hero-sub">Witness the Great Migration, the Big Five, and landscapes that will leave you breathless.</p>
+            <div class="hero-buttons">
+                <a href="kenya-safaris.html" class="btn btn-primary">Explore Kenya Safaris</a>
+                <a href="#" class="btn btn-secondary" id="heroChatTrigger">Talk to Our AI Travel Assistant</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WHY KENYA ===== -->
+    <section class="section why-kenya" id="whyKenya">
+        <div class="container">
+            <h2 class="section-title">Why Kenya?</h2>
+            <p class="section-sub">The ultimate safari destination — where nature puts on its greatest show.</p>
+            <div class="grid why-grid">
+                <div class="why-card"><i class="fas fa-paw"></i><h3>Big Five</h3><p>Lion, leopard, elephant, rhino, buffalo — all in their natural habitat.</p></div>
+                <div class="why-card"><i class="fas fa-route"></i><h3>Great Migration</h3><p>Witness over 1.5 million wildebeest crossing the Maasai Mara.</p></div>
+                <div class="why-card"><i class="fas fa-mountain"></i><h3>Diverse Landscapes</h3><p>From savannah to snow-capped Mount Kenya, lakes to coastal beaches.</p></div>
+                <div class="why-card"><i class="fas fa-users"></i><h3>Warm Hospitality</h3><p>Kenya's people welcome you with open arms and rich culture.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DESTINATIONS ===== -->
+    <section class="section destinations" id="destinations">
+        <div class="container">
+            <h2 class="section-title">Our Safari Destinations</h2>
+            <p class="section-sub">Handpicked experiences across East and Southern Africa.</p>
+            <div class="grid dest-grid">
+                <div class="dest-card featured">
+                    <img src="images/dest-kenya.jpg" alt="Maasai Mara Kenya safari" loading="lazy" />
+                    <div class="dest-info">
+                        <h3>Kenya</h3>
+                        <p>The crown jewel of African safaris — Maasai Mara, Amboseli, Tsavo, and more.</p>
+                        <a href="kenya-safaris.html" class="btn btn-outline">View Packages</a>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="images/dest-tanzania.jpg" alt="Serengeti Tanzania safari" loading="lazy" />
+                    <div class="dest-info">
+                        <h3>Tanzania</h3>
+                        <p>Serengeti, Ngorongoro Crater, and the Zanzibar beach extension.</p>
+                        <a href="tanzania-safaris.html" class="btn btn-outline">View Packages</a>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="images/dest-uganda.jpg" alt="Bwindi Uganda gorilla trekking" loading="lazy" />
+                    <div class="dest-info">
+                        <h3>Uganda</h3>
+                        <p>Gorilla trekking in Bwindi, Queen Elizabeth, and Murchison Falls.</p>
+                        <a href="uganda-safaris.html" class="btn btn-outline">View Packages</a>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="images/dest-botswana.jpg" alt="Okavango Delta Botswana" loading="lazy" />
+                    <div class="dest-info">
+                        <h3>Botswana</h3>
+                        <p>Okavango Delta, Chobe, and Moremi — pristine wilderness.</p>
+                        <a href="botswana-safaris.html" class="btn btn-outline">View Packages</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== LOCAL GETAWAYS PREVIEW ===== -->
+    <section class="section preview local-preview" style="background:#f5f0eb;">
+        <div class="container">
+            <h2 class="section-title">Local Kenyan Getaways</h2>
+            <p class="section-sub">Escape to Mombasa and Malindi for sun, sea, and Swahili culture.</p>
+            <div class="preview-grid">
+                <div class="preview-item"><img src="images/local-mombasa.jpg" alt="Mombasa beach" loading="lazy" /><h4>Mombasa</h4><p>White sand beaches, Fort Jesus, and vibrant Old Town.</p></div>
+                <div class="preview-item"><img src="images/local-malindi.jpg" alt="Malindi marine park" loading="lazy" /><h4>Malindi</h4><p>Marine parks, Watamu, and historical Swahili ruins.</p></div>
+            </div>
+            <div class="center"><a href="local-adventures.html" class="btn btn-primary">See Local Adventures</a></div>
+        </div>
+    </section>
+
+    <!-- ===== INTERNATIONAL PREVIEW ===== -->
+    <section class="section preview international-preview">
+        <div class="container">
+            <h2 class="section-title">International Holiday Packages</h2>
+            <p class="section-sub">Dream destinations for Kenyan travelers — from Maldives to China.</p>
+            <div class="preview-grid">
+                <div class="preview-item"><img src="images/intl-maldives.jpg" alt="Maldives" loading="lazy" /><h4>Maldives</h4><p>Overwater villas, crystal-clear waters, and pure luxury.</p></div>
+                <div class="preview-item"><img src="images/intl-dubai.jpg" alt="Dubai" loading="lazy" /><h4>Dubai</h4><p>Desert safaris, skyscrapers, and world-class shopping.</p></div>
+                <div class="preview-item"><img src="images/intl-southafrica.jpg" alt="South Africa" loading="lazy" /><h4>South Africa</h4><p>Cape Town, safaris, and the Garden Route.</p></div>
+            </div>
+            <div class="center"><a href="international-packages.html" class="btn btn-primary">See International Packages</a></div>
+        </div>
+    </section>
+
+    <!-- ===== VEHICLE & CHOPPER PREVIEW ===== -->
+    <section class="section preview hire-preview" style="background:#f5f0eb;">
+        <div class="container">
+            <h2 class="section-title">Vehicle &amp; Chopper Hire</h2>
+            <p class="section-sub">Nairobi-based safari 4x4s and helicopter charters.</p>
+            <div class="preview-grid">
+                <div class="preview-item"><i class="fas fa-car" style="font-size:3rem;color:var(--color-secondary);"></i><h4>Land Cruiser 4x4</h4><p>Self-drive or chauffeur-driven, safari-modified pop-top.</p></div>
+                <div class="preview-item"><i class="fas fa-helicopter" style="font-size:3rem;color:var(--color-secondary);"></i><h4>Helicopter Charter</h4><p>Scenic flights, VIP transfers, aerial safaris.</p></div>
+            </div>
+            <div class="center"><a href="car-and-chopper-hire.html" class="btn btn-primary">View Hire Services</a></div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="section testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Travelers Say</h2>
+            <div class="testimonial-carousel" id="testimonialCarousel">
+                <div class="testimonial-slide active">
+                    <blockquote>"The Maasai Mara safari was a dream come true. Dream Package Adventures handled everything perfectly."</blockquote>
+                    <cite>— Sarah M., Nairobi</cite>
+                </div>
+                <div class="testimonial-slide">
+                    <blockquote>"Our gorilla trek in Uganda was life-changing. The team was professional and passionate."</blockquote>
+                    <cite>— James K., UK</cite>
+                </div>
+                <div class="testimonial-slide">
+                    <blockquote>"The 4x4 hire was top-notch — we explored Tsavo with total peace of mind."</blockquote>
+                    <cite>— Amina D., Mombasa</cite>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-prev" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-next" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TRUST BADGES ===== -->
+    <section class="section trust-badges" style="background:#f5f0eb;padding:2rem 0;">
+        <div class="container">
+            <div class="badge-row">
+                <span><i class="fas fa-award"></i> Kenya Tourism Board</span>
+                <span><i class="fas fa-star"></i> TripAdvisor</span>
+                <span><i class="fas fa-check-circle"></i> SafariBookings</span>
+                <span><i class="fas fa-shield-alt"></i> Eco-Tourism Certified</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NEWSLETTER ===== -->
+    <section class="section newsletter" style="background:var(--color-primary);color:#fff;padding:3rem 0;">
+        <div class="container">
+            <h2 style="color:#fff;text-align:center;">Get Safari Inspiration</h2>
+            <p style="text-align:center;margin-bottom:1.5rem;">Sign up for exclusive deals and travel stories.</p>
+            <form class="newsletter-form" id="newsletterForm" novalidate>
+                <input type="email" placeholder="Your email address" required aria-label="Email address" />
+                <button type="submit" class="btn btn-secondary">Subscribe</button>
+                <div class="form-feedback"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <img src="images/logo.jpeg" alt="Dream Package Adventures logo" style="max-width: 90px; height: auto;" />
+                </div>
+                <h4>Dream Package Adventures</h4>
+                <p>Your gateway to Africa's wild heart.</p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+254758273319">+254 758 273 319</a></p>
+                <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/254758273319" target="_blank">Chat on WhatsApp</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@dreampackageadventures.com">info@dreampackageadventures.com</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="kenya-safaris.html">Kenya Safaris</a></li>
+                    <li><a href="tanzania-safaris.html">Tanzania Safaris</a></li>
+                    <li><a href="uganda-safaris.html">Uganda Safaris</a></li>
+                    <li><a href="botswana-safaris.html">Botswana Safaris</a></li>
+                    <li><a href="local-adventures.html">Local Adventures</a></li>
+                    <li><a href="international-packages.html">International Packages</a></li>
+                    <li><a href="car-and-chopper-hire.html">Vehicle &amp; Chopper Hire</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" aria-label="X(twitter)"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Dream Package Adventures. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ===== FLOATING WHATSAPP BUTTON ===== -->
+    <a href="https://wa.me/254758273319" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ===== AI CHATBOT WIDGET ===== -->
+    <div class="chatbot-float" id="chatbotFloat">
+        <button class="chatbot-toggle" id="chatbotToggle" aria-label="Open AI travel assistant">
+            <i class="fas fa-robot"></i>
+        </button>
+        <div class="chatbot-panel" id="chatbotPanel">
+            <div class="chatbot-header">
+                <h4><i class="fas fa-robot"></i> Dream Package AI</h4>
+                <button class="chatbot-close" id="chatbotClose">&times;</button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="bot-msg">👋 Hi! I'm your safari assistant. Ask me about Kenya safaris, vehicle hire, or anything else!</div>
+            </div>
+            <div class="chatbot-quick-replies" id="quickReplies">
+                <button class="quick-btn" data-msg="Kenya Safaris">🇰🇪 Kenya Safaris</button>
+                <button class="quick-btn" data-msg="Vehicle Hire">🚙 Vehicle Hire</button>
+                <button class="quick-btn" data-msg="Contact a human agent">👤 Contact Human</button>
+            </div>
+            <div class="chatbot-input-row">
+                <input type="text" id="chatbotInput" placeholder="Ask me anything..." aria-label="Chat input" />
+                <button id="chatbotSend" aria-label="Send message"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/chatbot.js"></script>
+
+    <!-- ===== SIMPLE MOBILE NAV TOGGLE ===== -->
+    <script>
+        (function() {
+            const hamburger = document.getElementById('hamburger');
+            const mainNav = document.getElementById('mainNav');
+            if (hamburger && mainNav) {
+                hamburger.addEventListener('click', function() {
+                    mainNav.classList.toggle('open');
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
