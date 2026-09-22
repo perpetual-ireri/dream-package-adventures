@@ -685,14 +685,45 @@
           <span>Safari &amp; Travel</span>
         </div>
       </a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="kenya-safaris.html">Safaris</a></li>
-        <li><a href="local-adventures.html">Local</a></li>
-        <li><a href="#inquiry">Contact</a></li>
-      </ul>
-    </div>
-  </header>
+     <!-- ============================================================
+         MAIN NAV
+         ============================================================ -->
+    <header class="site-header" id="siteHeader">
+        <div class="nav-bar">
+            <div class="container nav-container">
+
+                <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                </button>
+
+                <nav class="main-nav" id="mainNav" role="navigation" aria-label="Main navigation">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">Safaris <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="kenya-safaris.html">Kenya Safaris</a></li>
+                                <li><a href="tanzania-safaris.html">Tanzania Safaris</a></li>
+                                <li><a href="uganda-safaris.html">Uganda Safaris</a></li>
+                                <li><a href="botswana-safaris.html">Botswana Safaris</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">Getaways <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="local-adventures.html">Local Adventures</a></li>
+                                <li><a href="international-packages.html">International Packages</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="car-and-chopper-hire.html" class="active">Vehicle &amp; Chopper Hire</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+    </header>
 
   <!-- ===== HERO ===== -->
   <section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/local-hero.jpg');">
