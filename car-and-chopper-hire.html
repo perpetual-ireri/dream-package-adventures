@@ -3,76 +3,1201 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vehicle & Chopper Hire – Dream Package Adventures</title>
+    <title>Vehicle and Chopper Hire – Dream Package Adventures</title>
     <meta name="description" content="Safari vehicle hire – Land Cruiser 4x4 self-drive/chauffeur. Helicopter charters in Nairobi." />
+
+    <!-- ===== FAVICON ===== -->
+    <link rel="icon" type="image/jpeg" href="images/logo.jpeg" />
+    <link rel="shortcut icon" type="image/jpeg" href="images/logo.jpeg" />
+    <link rel="apple-touch-icon" href="images/logo.jpeg" />
+
+    <!-- ===== INTER FONT ===== -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+
+    <!-- ===== FONT AWESOME ===== -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+        /* ---------- GLOBAL RESET & VARIABLES ---------- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --color-primary: #1e3a2f;
+            --color-accent: #b8860b;
+            --color-accent-hover: #9a7209;
+            --color-bg-light: #f5f0eb;
+            --color-text: #222;
+            --color-text-muted: #555;
+            --color-white: #ffffff;
+            --color-border: #e5e0d8;
+            --color-whatsapp: #25d366;
+            --font-main: 'Inter', sans-serif;
+        }
+
+        html, body {
+            font-family: var(--font-main);
+            background: #ffffff;
+            color: var(--color-text);
+            line-height: 1.6;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        /* ensure no italic anywhere */
+        i, em, .fa, .fas, .far, .fab, .fal, .fad, .fak {
+            font-style: normal !important;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: var(--font-main);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.25;
+            color: var(--color-primary);
+            font-style: normal;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section { padding: 64px 0; }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 12px;
+            color: var(--color-primary);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            border-left: 5px solid var(--color-accent);
+            padding-left: 20px;
+            text-align: left;
+        }
+
+        .section-sub {
+            font-size: 1rem;
+            color: var(--color-text-muted);
+            margin-bottom: 40px;
+            padding-left: 25px;
+            max-width: 780px;
+        }
+
+        /* ---------- BUTTONS ---------- */
+        .btn {
+            display: inline-block;
+            font-family: var(--font-main);
+            font-weight: 600;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            padding: 12px 26px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s, border-color 0.2s;
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-style: normal;
+        }
+
+        .btn-primary {
+            background: var(--color-accent);
+            color: var(--color-white);
+            border-color: var(--color-accent);
+        }
+
+        .btn-primary:hover {
+            background: var(--color-accent-hover);
+            border-color: var(--color-accent-hover);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--color-primary);
+            border-color: var(--color-primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        /* ---------- TOP BAR (brand left · logo center · contacts right) ---------- */
+        .top-bar {
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            padding: 0.4rem 0;
+            width: 100%;
+        }
+
+        .top-bar-inner {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0 1.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            min-height: 84px;
+        }
+
+        .top-bar-brand {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-decoration: none;
+            color: inherit;
+            justify-self: start;
+        }
+
+        .top-bar-brand-name {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #1e1e1e;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+        }
+
+        .top-bar-brand-name span {
+            display: block;
+            font-size: 0.68rem;
+            font-weight: 500;
+            color: var(--color-accent);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        .top-bar-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            justify-self: center;
+            grid-column: 2;
+        }
+
+        .top-bar-logo img {
+            height: 72px !important;
+            width: auto !important;
+            max-height: 72px !important;
+            object-fit: contain;
+            display: block;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+
+        .top-bar-contacts {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.6rem 1rem;
+            justify-content: flex-end;
+            justify-self: end;
+            grid-column: 3;
+        }
+
+        .top-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.78rem;
+            white-space: nowrap;
+            transition: color 0.2s;
+        }
+
+        .top-bar-item i {
+            font-size: 0.9rem;
+            color: var(--color-accent);
+            width: 1.1rem;
+            text-align: center;
+        }
+
+        .top-bar-item:hover { color: var(--color-accent); }
+
+        .top-bar-socials {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .top-bar-socials a {
+            color: #4a4a4a;
+            font-size: 0.85rem;
+            transition: color 0.2s, transform 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.7rem;
+            height: 1.7rem;
+            border-radius: 50%;
+            background: #f5f5f5;
+            text-decoration: none;
+        }
+
+        .top-bar-socials a:hover {
+            color: #fff;
+            background: var(--color-accent);
+            transform: scale(1.05);
+        }
+
+        /* ---------- MAIN NAV ---------- */
+        .site-header {
+            background: #fff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .nav-bar { padding: 0.15rem 0; }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            min-height: 42px;
+            position: relative;
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.2rem;
+            flex-direction: column;
+            gap: 4px;
+            margin-right: auto;
+        }
+
+        .hamburger .bar {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: #222;
+            border-radius: 2px;
+            transition: 0.2s;
+        }
+
+        .main-nav { width: 100%; display: flex; justify-content: center; }
+
+        .nav-list {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            list-style: none;
+            gap: 0.2rem 0.9rem;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-list li {
+            position: relative;
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+        }
+
+        .nav-list li a {
+            text-decoration: none;
+            color: #1e1e1e;
+            padding: 0.3rem 0.15rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            transition: color 0.2s;
+            white-space: nowrap;
+        }
+
+        .nav-list li a:hover,
+        .nav-list li a.active { color: var(--color-accent); }
+
+        .nav-list li a.active { font-weight: 600; }
+
+        .dropdown-toggle i {
+            font-size: 0.6rem;
+            margin-left: 0.15rem;
+            color: #888;
+            transition: transform 0.2s;
+        }
+
+        .dropdown:hover .dropdown-toggle i { transform: rotate(180deg); }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+            border-radius: 6px;
+            padding: 0.4rem 0;
+            min-width: 180px;
+            list-style: none;
+            z-index: 1000;
+            border: 1px solid #f0f0f0;
+            margin-top: 0.2rem;
+        }
+
+        .dropdown:hover .dropdown-menu { display: block; }
+
+        .dropdown-menu li a {
+            padding: 0.45rem 1rem;
+            font-size: 0.78rem;
+            font-weight: 400;
+            color: #333;
+            display: block;
+            white-space: nowrap;
+        }
+
+        .dropdown-menu li a:hover {
+            background: #f9f6f0;
+            color: var(--color-accent);
+        }
+
+        /* ---------- HERO — FULL PAGE COVER ---------- */
+        .hero {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            padding: 60px 24px;
+            position: relative;
+            margin: 0;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2rem, 5vw, 3.4rem);
+            font-weight: 700;
+            margin-bottom: 18px;
+            color: #fff;
+            text-shadow: 0 4px 14px rgba(0,0,0,0.5);
+            line-height: 1.15;
+        }
+
+        .hero-sub {
+            font-size: clamp(1rem, 2.2vw, 1.3rem);
+            font-weight: 400;
+            max-width: 720px;
+            margin: 0 auto;
+            color: #f0f0f0;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        /* ---------- FEATURE IMAGE CARDS ---------- */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+
+        .feature-card {
+            background: #ffffff;
+            border: 1px solid var(--color-border);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 32px rgba(0,0,0,0.1);
+        }
+
+        .feature-card .feature-image {
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+            background: #e8e4dd;
+            background-image: linear-gradient(135deg, #e8e4dd 0%, #ddd7cd 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #a89f8f;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .feature-card .feature-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .feature-card .feature-body {
+            padding: 28px 26px 30px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature-card .feature-body h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            color: var(--color-primary);
+            letter-spacing: -0.02em;
+        }
+
+        .feature-card .feature-body > p {
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+            margin-bottom: 20px;
+            line-height: 1.65;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .feature-list li {
+            font-size: 0.9rem;
+            color: var(--color-text);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            line-height: 1.5;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            color: var(--color-accent);
+            font-weight: 700;
+            font-size: 1rem;
+            flex-shrink: 0;
+            line-height: 1.4;
+        }
+
+        .feature-card .feature-body .btn {
+            margin-top: auto;
+            align-self: flex-start;
+        }
+
+        /* ---------- PRICING CARDS ---------- */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .pricing-card {
+            background: #ffffff;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 24px 22px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+        }
+
+        .pricing-card h4 {
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+            color: var(--color-primary);
+        }
+
+        .pricing-card p {
+            font-size: 0.88rem;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+            margin-bottom: 14px;
+            flex: 1;
+        }
+
+        .pricing-card .price {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            margin-bottom: 16px;
+            letter-spacing: -0.01em;
+        }
+
+        .pricing-card .btn {
+            align-self: flex-start;
+            padding: 9px 20px;
+            font-size: 0.72rem;
+        }
+
+        /* ---------- INQUIRY FORM ---------- */
+        .inquiry-section {
+            background: var(--color-bg-light);
+            padding: 72px 24px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .form-container h2 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+            color: var(--color-primary);
+            text-align: center;
+        }
+
+        .form-container .form-sub {
+            font-size: 1rem;
+            color: var(--color-text-muted);
+            margin-bottom: 36px;
+            text-align: center;
+        }
+
+        .inquiry-form {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--color-primary);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px 18px;
+            font-family: var(--font-main);
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: var(--color-text);
+            background: #ffffff;
+            border: 1px solid #d9d3c9;
+            border-radius: 5px;
+            outline: none;
+            transition: border-color 0.15s, box-shadow 0.15s;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.12);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%231e3a2f' d='M6 8L2 4h8z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 18px center;
+            background-size: 12px;
+            padding-right: 48px;
+        }
+
+        .btn-submit {
+            align-self: flex-start;
+            background: var(--color-accent);
+            color: var(--color-white);
+            font-family: var(--font-main);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            padding: 16px 40px;
+            border: 2px solid var(--color-accent);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s, border-color 0.2s;
+            margin-top: 8px;
+        }
+
+        .btn-submit:hover {
+            background: var(--color-accent-hover);
+            border-color: var(--color-accent-hover);
+        }
+
+        .form-message {
+            margin-top: 20px;
+            font-size: 0.92rem;
+            font-weight: 500;
+            color: #1e7a3f;
+            background: #e8f5ec;
+            padding: 14px 18px;
+            border-left: 4px solid #1e7a3f;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .form-message.show { display: block; }
+
+        /* ---------- FOOTER ---------- */
+        .site-footer {
+            background: var(--color-primary);
+            color: #d8d8d8;
+            padding: 56px 0 28px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .footer-logo {
+            max-width: 100px;
+            height: auto;
+            display: block;
+            margin-bottom: 14px;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+
+        .footer-col h4 {
+            color: #ffffff;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .footer-col p,
+        .footer-col ul {
+            font-size: 0.88rem;
+            line-height: 1.9;
+        }
+
+        .footer-col ul { list-style: none; padding: 0; }
+
+        .footer-col ul li a {
+            color: #c8c8c8;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-col ul li a:hover { color: var(--color-accent); }
+
+        .footer-col a { color: #c8c8c8; text-decoration: none; }
+        .footer-col a:hover { color: var(--color-accent); }
+
+        .footer-col i {
+            color: var(--color-accent);
+            margin-right: 6px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            margin-top: 40px;
+            padding: 20px 24px 0;
+            font-size: 0.78rem;
+            color: #a5a5a5;
+            text-align: center;
+        }
+
+        /* ---------- WHATSAPP FLOAT ---------- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            background: var(--color-whatsapp);
+            color: #fff;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 998;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+            color: #fff;
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 992px) {
+            .top-bar-inner {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+                padding: 0.8rem 1rem;
+                justify-items: center;
+                min-height: auto;
+            }
+            .top-bar-brand { order: 2; justify-self: center; text-align: center; }
+            .top-bar-logo { order: 1; grid-column: 1; justify-self: center; }
+            .top-bar-contacts {
+                order: 3;
+                grid-column: 1;
+                justify-content: center;
+                justify-self: center;
+                gap: 0.5rem 0.9rem;
+            }
+            .top-bar-logo img { height: 58px !important; max-height: 58px !important; }
+
+            .nav-list { gap: 0.1rem 0.5rem; }
+            .nav-list li { font-size: 0.72rem; }
+
+            .hamburger { display: flex; }
+            .main-nav { display: none; width: 100%; justify-content: flex-start; }
+            .main-nav.open { display: block; }
+
+            .nav-list {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.2rem;
+                padding: 0.5rem 0;
+                width: 100%;
+            }
+            .nav-list li { width: 100%; font-size: 0.82rem; }
+            .nav-list li a { padding: 0.5rem 0.8rem; width: 100%; }
+            .dropdown-menu {
+                position: static;
+                box-shadow: none;
+                border: none;
+                padding-left: 1rem;
+                background: #fafafa;
+                border-radius: 0;
+            }
+
+            .hero {
+                min-height: 90vh;
+                background-attachment: scroll;
+            }
+
+            .section-title { font-size: 1.5rem; }
+            .section-sub { padding-left: 20px; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2rem; }
+            .hero-sub { font-size: 1rem; }
+            .feature-card .feature-image { height: 220px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+            .inquiry-section { padding: 48px 16px; }
+            .btn-submit { width: 100%; text-align: center; }
+        }
+
+        @media (max-width: 480px) {
+            .top-bar-logo img { height: 46px !important; }
+            .top-bar-brand-name { font-size: 0.95rem; }
+            .top-bar-brand-name span { font-size: 0.55rem; }
+            .top-bar-item span { display: none; }
+            .top-bar-item i { font-size: 1rem; }
+            .feature-grid { grid-template-columns: 1fr; }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .hero-content h1 { font-size: 1.6rem; }
+            .hero { min-height: 85vh; }
+        }
+    </style>
 </head>
 <body>
-    <!-- ===== NAVIGATION (copy from index) ===== -->
-    <header class="site-header" id="siteHeader">...</header>
 
-    <!-- ===== HERO ===== -->
-    <section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hire-hero.jpg'); min-height: 50vh;">
+    <!-- ============================================================
+         TOP BAR: Brand LEFT · Logo CENTER · Contacts RIGHT
+         ============================================================ -->
+    <div class="top-bar">
+        <div class="top-bar-inner">
+
+            <!-- LEFT: Brand name -->
+            <a href="index.html" class="top-bar-brand">
+                <div class="top-bar-brand-name">
+                    Dream Package Adventures
+                    <span>Safari &amp; Travel</span>
+                </div>
+            </a>
+
+            <!-- CENTER: Logo -->
+            <a href="index.html" class="top-bar-logo">
+                <img src="images/logo.jpeg" alt="Dream Package Adventures logo" />
+            </a>
+
+            <!-- RIGHT: contacts + socials -->
+            <div class="top-bar-contacts">
+                <a href="mailto:info@dreampackageadventures.com" class="top-bar-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@dreampackageadventures.com</span>
+                </a>
+                <a href="tel:+254758273319" class="top-bar-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+254 758 273 319</span>
+                </a>
+                <div class="top-bar-socials">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ============================================================
+         MAIN NAV
+         ============================================================ -->
+    <header class="site-header" id="siteHeader">
+        <div class="nav-bar">
+            <div class="container nav-container">
+
+                <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                </button>
+
+                <nav class="main-nav" id="mainNav" role="navigation" aria-label="Main navigation">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">Safaris <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="kenya-safaris.html">Kenya Safaris</a></li>
+                                <li><a href="tanzania-safaris.html">Tanzania Safaris</a></li>
+                                <li><a href="uganda-safaris.html">Uganda Safaris</a></li>
+                                <li><a href="botswana-safaris.html">Botswana Safaris</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">Getaways <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="local-adventures.html">Local Adventures</a></li>
+                                <li><a href="international-packages.html">International Packages</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="car-and-chopper-hire.html" class="active">Vehicle &amp; Chopper Hire</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== HERO — FULL PAGE COVER ===== -->
+    <section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('images/hire-hero.jpeg');">
         <div class="container hero-content">
-            <h1>Vehicle &amp; Helicopter Hire</h1>
+            <h1>Vehicle and Helicopter Hire</h1>
             <p class="hero-sub">Nairobi-based – safari-ready Land Cruisers and luxury helicopter charters.</p>
         </div>
     </section>
 
-    <!-- ===== LAND CRUISER ===== -->
+    <!-- ===== FEATURE CARDS: LAND CRUISER & HELICOPTER ===== -->
     <section class="section">
         <div class="container">
-            <h2 class="section-title">Land Cruiser 4x4 Hire</h2>
-            <p class="section-sub">Safari-modified pop-top vehicles for self-drive or chauffeur-driven adventures.</p>
-            <div class="grid" style="grid-template-columns: 1fr 1fr; gap:2rem;">
-                <div class="dest-card"><div class="dest-info"><h3>Self-Drive</h3><p>Full insurance, unlimited mileage, airport pickup/drop-off available.</p><p><strong>From $120</strong> / day</p><a href="contact.html" class="btn btn-primary">Enquire Now</a></div></div>
-                <div class="dest-card"><div class="dest-info"><h3>Chauffeur-Driven</h3><p>Professional English-speaking driver/guide, all fuel and park fees included.</p><p><strong>From $180</strong> / day</p><a href="contact.html" class="btn btn-primary">Enquire Now</a></div></div>
-            </div>
-        </div>
-    </section>
+            <h2 class="section-title">Our Hire Services</h2>
+            <p class="section-sub">Two flagship options for exploring Kenya your way — on the ground in a safari 4x4, or from the air in a luxury helicopter.</p>
 
-    <!-- ===== HELICOPTER ===== -->
-    <section class="section" style="background: var(--color-light);">
-        <div class="container">
-            <h2 class="section-title">Helicopter Charter Hire</h2>
-            <p class="section-sub">Scenic flights over Nairobi, VIP transfers, and aerial safaris.</p>
-            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
-                <div class="dest-card"><div class="dest-info"><h3>Scenic Flights</h3><p>See Nairobi National Park, the Great Rift Valley, and more.</p><p><strong>From $1,200</strong> / hour</p><a href="contact.html" class="btn btn-primary">Enquire Now</a></div></div>
-                <div class="dest-card"><div class="dest-info"><h3>Maasai Mara Transfers</h3><p>Fly directly to the Mara – skip the long road journey.</p><p><strong>From $2,800</strong> one-way</p><a href="contact.html" class="btn btn-primary">Enquire Now</a></div></div>
-                <div class="dest-card"><div class="dest-info"><h3>Aerial Safaris</h3><p>Combine flying with wildlife viewing from above.</p><p><strong>From $1,500</strong> / hour</p><a href="contact.html" class="btn btn-primary">Enquire Now</a></div></div>
-            </div>
-        </div>
-    </section>
+            <div class="feature-grid">
 
-    <!-- ===== BOOKING ENQUIRY FORM ===== -->
-    <section class="section">
-        <div class="container" style="max-width:700px; margin:0 auto;">
-            <h2 class="section-title">Hire Enquiry</h2>
-            <form id="hireForm" novalidate>
-                <div style="display:grid; gap:1rem;">
-                    <input type="text" placeholder="Full Name" required />
-                    <input type="tel" placeholder="Phone Number" required />
-                    <input type="text" placeholder="Preferred Dates (e.g. 10-15 Dec)" />
-                    <select required>
-                        <option value="">Select Service</option>
-                        <option>Land Cruiser Self-Drive</option>
-                        <option>Land Cruiser Chauffeur-Driven</option>
-                        <option>Helicopter Scenic</option>
-                        <option>Helicopter Mara Transfer</option>
-                        <option>Helicopter Aerial Safari</option>
-                    </select>
-                    <textarea rows="4" placeholder="Additional details (number of people, special requests...)"></textarea>
-                    <button type="submit" class="btn btn-primary">Send Enquiry</button>
-                    <div class="form-feedback"></div>
+                <!-- ===== LAND CRUISER CARD ===== -->
+                <div class="feature-card">
+                    <div class="feature-image">
+                        <img src="images/land-cruiser-4x4.jpg" alt="Safari-modified Toyota Land Cruiser 4x4 with pop-top roof" loading="lazy" />
+                    </div>
+                    <div class="feature-body">
+                        <h3>Land Cruiser 4x4</h3>
+                        <p>Safari-modified Toyota Land Cruisers with pop-top roofs, built for comfort on Kenya's toughest roads — from the Maasai Mara to Samburu.</p>
+                        <ul class="feature-list">
+                            <li>Pop-top roof for unobstructed game viewing</li>
+                            <li>Available self-drive or chauffeur-driven</li>
+                            <li>Full comprehensive insurance &amp; 24/7 roadside support</li>
+                            <li>Airport pickup and drop-off in Nairobi</li>
+                            <li>Cooler box, charging ports, and unlimited mileage</li>
+                        </ul>
+                        <a href="#inquiry" class="btn btn-primary">Enquire Now</a>
+                    </div>
                 </div>
+
+                <!-- ===== HELICOPTER CARD ===== -->
+                <div class="feature-card">
+                    <div class="feature-image">
+                        <img src="images/helicopter-charter.jpg" alt="Luxury helicopter charter in Nairobi" loading="lazy" />
+                    </div>
+                    <div class="feature-body">
+                        <h3>Helicopter Charter</h3>
+                        <p>Skip the long drives and see Kenya from above. Scenic flights over Nairobi, direct transfers to the Maasai Mara, and full aerial safaris.</p>
+                        <ul class="feature-list">
+                            <li>Scenic flights over Nairobi National Park &amp; Rift Valley</li>
+                            <li>Direct transfers to Maasai Mara, Amboseli, and Diani</li>
+                            <li>Aerial safari routes with wildlife viewing from above</li>
+                            <li>VIP airport and lodge transfers</li>
+                            <li>Experienced commercial pilots, fully insured aircraft</li>
+                        </ul>
+                        <a href="#inquiry" class="btn btn-primary">Enquire Now</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== LAND CRUISER PRICING ===== -->
+    <section class="section" style="background: var(--color-bg-light);">
+        <div class="container">
+            <h2 class="section-title">Land Cruiser 4x4 Rates</h2>
+            <p class="section-sub">Transparent daily rates — self-drive or chauffeur-driven, all fully insured and safari-ready.</p>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h4>Self-Drive</h4>
+                    <p>Full insurance, unlimited mileage, airport pickup and drop-off available.</p>
+                    <div class="price">From $120 / day</div>
+                    <a href="#inquiry" class="btn btn-primary">Enquire Now</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h4>Chauffeur-Driven</h4>
+                    <p>Professional English-speaking driver/guide, all fuel and park fees included.</p>
+                    <div class="price">From $180 / day</div>
+                    <a href="#inquiry" class="btn btn-primary">Enquire Now</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h4>Multi-Day Safari Package</h4>
+                    <p>3+ day discounted rates for extended safaris, includes full support vehicle network.</p>
+                    <div class="price">From $150 / day</div>
+                    <a href="#inquiry" class="btn btn-primary">Enquire Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== HELICOPTER PRICING ===== -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Helicopter Charter Rates</h2>
+            <p class="section-sub">Scenic flights over Nairobi, VIP transfers, and aerial safaris — priced per hour or per route.</p>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h4>Scenic Flights</h4>
+                    <p>See Nairobi National Park, the Great Rift Valley, and more from the air.</p>
+                    <div class="price">From $1,200 / hour</div>
+                    <a href="#inquiry" class="btn btn-primary">Enquire Now</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h4>Maasai Mara Transfers</h4>
+                    <p>Fly directly to the Mara — skip the long road journey and start your safari fresh.</p>
+                    <div class="price">From $2,800 one-way</div>
+                    <a href="#inquiry" class="btn btn-primary">Enquire Now</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h4>Aerial Safaris</h4>
+                    <p>Combine flying with wildlife viewing from above — the ultimate safari vantage point.</p>
+                    <div class="price">From $1,500 / hour</div>
+                    <a href="#inquiry" class="btn btn-primary">Enquire Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== INQUIRY FORM ===== -->
+    <section id="inquiry" class="inquiry-section">
+        <div class="form-container">
+            <h2>Hire Enquiry</h2>
+            <p class="form-sub">Tell us what you need and we'll get back to you within 24 hours.</p>
+
+            <form class="inquiry-form" id="hireForm" novalidate>
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="e.g. Jane Doe" autocomplete="name" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your number" autocomplete="tel" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Select Service</label>
+                    <select id="service" name="service" required>
+                        <option value="" disabled selected>— Please choose an option —</option>
+                        <option value="Land Cruiser Self-Drive">Land Cruiser Self-Drive</option>
+                        <option value="Land Cruiser Chauffeur-Driven">Land Cruiser Chauffeur-Driven</option>
+                        <option value="Helicopter Scenic">Helicopter Scenic</option>
+                        <option value="Helicopter Mara Transfer">Helicopter Mara Transfer</option>
+                        <option value="Helicopter Aerial Safari">Helicopter Aerial Safari</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="dates">Preferred Dates</label>
+                    <input type="text" id="dates" name="dates" placeholder="e.g. 10–15 December" />
+                </div>
+
+                <div class="form-group">
+                    <label for="details">Additional Details</label>
+                    <textarea id="details" name="details" rows="5" placeholder="Number of people, special requests, pickup location..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Send Enquiry</button>
+
+                <div class="form-message" id="formMessage">Thanks, we'll be in touch shortly.</div>
             </form>
         </div>
     </section>
 
-    <!-- ===== FOOTER, WHATSAPP, CHATBOT (copy) ===== -->
+    <!-- ===== FOOTER (with logo) ===== -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <img src="images/logo.jpeg" alt="Dream Package Adventures logo" class="footer-logo" />
+                <h4>Dream Package Adventures</h4>
+                <p>Your gateway to Africa's wild heart.</p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+254758273319">+254 758 273 319</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@dreampackageadventures.com">info@dreampackageadventures.com</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="kenya-safaris.html">Kenya Safaris</a></li>
+                    <li><a href="tanzania-safaris.html">Tanzania Safaris</a></li>
+                    <li><a href="uganda-safaris.html">Uganda Safaris</a></li>
+                    <li><a href="botswana-safaris.html">Botswana Safaris</a></li>
+                    <li><a href="local-adventures.html">Local Getaways</a></li>
+                    <li><a href="international-packages.html">International Packages</a></li>
+                    <li><a href="car-and-chopper-hire.html">Vehicle &amp; Chopper Hire</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#inquiry">Contact</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Terms &amp; Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="#"><i class="fab fa-tiktok"></i> TikTok</a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Dream Package Adventures. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- ===== FLOATING WHATSAPP BUTTON ===== -->
+    <a href="https://wa.me/254758273319" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        (function () {
+            const hamburger = document.getElementById('hamburger');
+            const mainNav = document.getElementById('mainNav');
+            if (hamburger && mainNav) {
+                hamburger.addEventListener('click', function () {
+                    mainNav.classList.toggle('open');
+                });
+            }
+
+            const form = document.getElementById('hireForm');
+            const messageEl = document.getElementById('formMessage');
+
+            if (form) {
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    const fullName = document.getElementById('fullName').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const phone = document.getElementById('phone').value.trim();
+                    const service = document.getElementById('service').value;
+
+                    if (!fullName || !email || !phone || !service) {
+                        alert('Please fill in your name, email, phone, and select a service.');
+                        return;
+                    }
+
+                    const formData = {
+                        fullName: fullName,
+                        email: email,
+                        phone: phone,
+                        service: service,
+                        dates: document.getElementById('dates').value.trim(),
+                        details: document.getElementById('details').value.trim()
+                    };
+
+                    console.log('Hire enquiry ready to send:', formData);
+
+                    messageEl.classList.add('show');
+                    setTimeout(() => messageEl.classList.remove('show'), 6000);
+                    form.reset();
+                });
+            }
+        })();
+    </script>
+
 </body>
 </html>

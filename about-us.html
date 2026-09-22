@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us – Dream Package Adventures</title>
+    <meta name="description" content="About Dream Package Adventures – a Nairobi-based safari and travel company built by Kenyans. Learn our story, our values, and meet the team behind your journey." />
+
+    <!-- ===== FAVICON ===== -->
+    <link rel="icon" type="image/jpeg" href="images/logo.jpeg" />
+    <link rel="shortcut icon" type="image/jpeg" href="images/logo.jpeg" />
+    <link rel="apple-touch-icon" href="images/logo.jpeg" />
+
+    <!-- ===== INTER FONT ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+        /* ============================================================
+           RESET & TOKENS
+           ============================================================ */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #1e3a2f;
+            --primary-dark: #14261e;
+            --secondary: #b8860b;
+            --secondary-dark: #9a6f09;
+            --bg-light: #f5f0eb;
+            --bg-cream: #faf7f2;
+            --text: #222;
+            --muted: #6b6b6b;
+            --border: #eae6df;
+            --radius: 12px;
+            --shadow-sm: 0 3px 12px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 14px 36px rgba(0, 0, 0, 0.12);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fff;
+            color: var(--text);
+            font-size: 15px;
+            line-height: 1.7;
+            font-style: normal;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -0.02em;
+            font-style: normal;
+            line-height: 1.25;
+        }
+
+        i, em, .fa, .fas, .far, .fab {
+            font-style: normal !important;
+        }
+
+        a { color: inherit; }
+        img { display: block; max-width: 100%; }
+
+        /* ============================================================
+           TOP BAR — LOGO CENTERED
+           ============================================================ */
+        .top-bar {
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+            padding: 0.3rem 0;
+            width: 100%;
+        }
+        .top-bar-inner {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0 1.2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            min-height: 56px;
+        }
+        .top-bar-left { display: flex; align-items: center; min-width: 0; }
+        .top-bar-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            text-decoration: none;
+            color: inherit;
+            justify-self: center;
+            grid-column: 2;
+        }
+        .top-bar-logo img {
+            height: 48px !important;
+            width: auto !important;
+            max-height: 48px !important;
+            object-fit: contain;
+        }
+        .top-bar-brand-name {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #1e1e1e;
+            letter-spacing: -0.02em;
+            white-space: nowrap;
+            line-height: 1.2;
+        }
+        .top-bar-brand-name span {
+            display: block;
+            font-size: 0.6rem;
+            font-weight: 500;
+            color: var(--secondary);
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+        }
+        .top-bar-contacts {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.6rem 1rem;
+            justify-content: flex-end;
+            grid-column: 3;
+        }
+        .top-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.78rem;
+            white-space: nowrap;
+            transition: color 0.2s;
+        }
+        .top-bar-item i {
+            font-size: 0.9rem;
+            color: var(--secondary);
+            width: 1.1rem;
+            text-align: center;
+        }
+        .top-bar-item:hover { color: var(--secondary); }
+        .top-bar-socials {
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            margin-left: 0.2rem;
+        }
+        .top-bar-socials a {
+            color: #4a4a4a;
+            font-size: 0.9rem;
+            transition: color 0.2s, transform 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.6rem;
+            height: 1.6rem;
+            border-radius: 50%;
+            background: #f5f5f5;
+            text-decoration: none;
+        }
+        .top-bar-socials a:hover {
+            color: #fff;
+            background: var(--secondary);
+            transform: scale(1.05);
+        }
+
+        /* ============================================================
+           MAIN NAV
+           ============================================================ */
+        .site-header {
+            background: #fff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+        .nav-bar { padding: 0.15rem 0; }
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            min-height: 38px;
+            position: relative;
+        }
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.2rem;
+            flex-direction: column;
+            gap: 4px;
+            margin-right: auto;
+        }
+        .hamburger .bar {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: #222;
+            border-radius: 2px;
+            transition: 0.2s;
+        }
+        .main-nav { width: 100%; display: flex; justify-content: center; }
+        .nav-list {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            list-style: none;
+            gap: 0.2rem 0.8rem;
+            padding: 0;
+            margin: 0;
+        }
+        .nav-list li {
+            position: relative;
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+        }
+        .nav-list li a {
+            text-decoration: none;
+            color: #1e1e1e;
+            padding: 0.25rem 0.15rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            transition: color 0.2s;
+            white-space: nowrap;
+        }
+        .nav-list li a:hover,
+        .nav-list li a.active { color: var(--secondary); }
+        .nav-list li a.active { font-weight: 600; }
+
+        .dropdown-toggle i {
+            font-size: 0.6rem;
+            margin-left: 0.15rem;
+            color: #888;
+            transition: transform 0.2s;
+        }
+        .dropdown:hover .dropdown-toggle i { transform: rotate(180deg); }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            box-shadow: var(--shadow-md);
+            border-radius: 6px;
+            padding: 0.4rem 0;
+            min-width: 180px;
+            list-style: none;
+            z-index: 1000;
+            border: 1px solid var(--border);
+            margin-top: 0.2rem;
+        }
+        .dropdown:hover .dropdown-menu { display: block; }
+        .dropdown-menu li a {
+            padding: 0.4rem 1rem;
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: #333;
+            display: block;
+            white-space: nowrap;
+        }
+        .dropdown-menu li a:hover {
+            background: var(--bg-cream);
+            color: var(--secondary);
+        }
+
+        /* ============================================================
+           HERO
+           ============================================================ */
+        .hero {
+            position: relative;
+            min-height: 52vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 4rem 1rem;
+        }
+        .hero-content { max-width: 780px; }
+        .hero h1 {
+            color: #fff;
+            font-size: clamp(1.9rem, 4vw, 2.8rem);
+            margin-bottom: 0.9rem;
+            text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+            letter-spacing: -0.02em;
+        }
+        .hero-sub {
+            font-size: clamp(0.95rem, 1.5vw, 1.12rem);
+            color: #ececec;
+            max-width: 620px;
+            margin: 0 auto;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
+        }
+
+        /* ============================================================
+           SECTIONS
+           ============================================================ */
+        .section { padding: 4.2rem 1rem; }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .section-title {
+            font-size: clamp(1.5rem, 2.8vw, 2rem);
+            text-align: center;
+            margin-bottom: 0.6rem;
+            letter-spacing: -0.02em;
+        }
+        .section-sub {
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.95rem;
+            margin-bottom: 2.4rem;
+            max-width: 660px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .eyebrow {
+            display: block;
+            text-align: center;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--secondary);
+            margin-bottom: 0.7rem;
+        }
+        .prose {
+            max-width: 780px;
+            margin: 0 auto;
+            font-size: 0.98rem;
+            line-height: 1.85;
+            color: #333;
+        }
+        .prose p { margin-bottom: 1.1rem; }
+        .prose p:last-child { margin-bottom: 0; }
+
+        /* ============================================================
+           WHO WE ARE (intro block)
+           ============================================================ */
+        .who-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-top: 2.4rem;
+        }
+        .who-image {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+        .who-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            aspect-ratio: 4 / 3;
+        }
+        .who-text h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+        .who-text p {
+            font-size: 0.95rem;
+            color: #333;
+            margin-bottom: 1rem;
+            line-height: 1.85;
+        }
+
+        /* ============================================================
+           WHAT WE DO (services grid)
+           ============================================================ */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 1.4rem;
+        }
+        .service-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.7rem 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: transparent;
+        }
+        .service-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: var(--bg-cream);
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+        }
+        .service-card h3 {
+            font-size: 1.02rem;
+            margin-bottom: 0.45rem;
+        }
+        .service-card p {
+            font-size: 0.85rem;
+            color: var(--muted);
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        /* ============================================================
+           VALUES
+           ============================================================ */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 1.4rem;
+        }
+        .value-card {
+            background: #fff;
+            border-radius: var(--radius);
+            padding: 1.8rem 1.5rem;
+            border-left: 4px solid var(--secondary);
+            box-shadow: var(--shadow-sm);
+        }
+        .value-card h3 {
+            font-size: 1.02rem;
+            margin-bottom: 0.45rem;
+        }
+        .value-card p {
+            font-size: 0.85rem;
+            color: var(--muted);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* ============================================================
+           TEAM
+           ============================================================ */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.8rem;
+        }
+        .team-card {
+            background: #fff;
+            border-radius: var(--radius);
+            padding: 2rem 1.2rem 1.6rem;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        .team-card img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1rem;
+            border: 3px solid var(--bg-cream);
+        }
+        .team-card h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+        .team-card .role {
+            display: block;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: var(--secondary);
+            margin-bottom: 0.8rem;
+        }
+        .team-card p {
+            font-size: 0.82rem;
+            color: var(--muted);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ============================================================
+           CREDENTIALS
+           ============================================================ */
+        .credentials {
+            background: var(--primary);
+            color: #fff;
+            padding: 3rem 1rem;
+        }
+        .credentials .section-title {
+            color: #fff;
+            margin-bottom: 1.6rem;
+        }
+        .badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem 2.2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .badge-row span {
+            display: inline-flex;
+            align-items: center;
+            font-weight: 400;
+            font-size: 0.9rem;
+            color: #e2e8e4;
+        }
+        .badge-row span::before {
+            content: "\2713";
+            margin-right: 0.55rem;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--secondary);
+        }
+
+        /* ============================================================
+           CTA
+           ============================================================ */
+        .cta-banner {
+            background: linear-gradient(135deg, #2c5645 0%, var(--primary) 100%);
+            color: #fff;
+            text-align: center;
+            padding: 3.2rem 1.5rem;
+            border-radius: 16px;
+            max-width: 1100px;
+            margin: 0 auto;
+            box-shadow: var(--shadow-md);
+        }
+        .cta-banner h2 {
+            color: #fff;
+            font-size: clamp(1.4rem, 2.6vw, 1.85rem);
+            margin-bottom: 0.7rem;
+        }
+        .cta-banner p {
+            color: #d9e2dc;
+            margin-bottom: 1.6rem;
+            font-size: 0.95rem;
+            max-width: 560px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ============================================================
+           BUTTONS
+           ============================================================ */
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.6rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 0.2px;
+            transition: all 0.25s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background: var(--secondary);
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: var(--secondary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 22px rgba(184, 134, 11, 0.28);
+        }
+
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+        .site-footer {
+            background: var(--primary-dark);
+            color: #cfd8d3;
+            padding: 3.4rem 1rem 0;
+            margin-top: 3rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-bottom: 2rem;
+        }
+        .footer-col h4 {
+            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        .footer-col p,
+        .footer-col li {
+            font-size: 0.82rem;
+            line-height: 1.9;
+            color: #b9c4bd;
+        }
+        .footer-col a {
+            color: #b9c4bd;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer-col a:hover { color: var(--secondary); }
+        .footer-col ul { list-style: none; }
+        .footer-col i {
+            color: var(--secondary);
+            margin-right: 0.4rem;
+            width: 1rem;
+        }
+        .footer-logo img {
+            max-width: 90px;
+            height: auto;
+            margin-bottom: 0.7rem;
+            border-radius: 6px;
+        }
+        .social-icons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2rem;
+            height: 2rem;
+            background: #223a2f;
+            border-radius: 50%;
+            color: #cfd8d3;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .social-icons a:hover {
+            background: var(--secondary);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        .footer-bottom {
+            border-top: 1px solid #223a2f;
+            text-align: center;
+            padding: 1.2rem 1rem;
+            font-size: 0.78rem;
+            color: #8a978f;
+        }
+
+        /* ============================================================
+           WHATSAPP FLOAT + CHATBOT
+           ============================================================ */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 22px;
+            left: 22px;
+            background: #25d366;
+            color: #fff;
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+            z-index: 998;
+            text-decoration: none;
+            transition: transform 0.25s;
+        }
+        .whatsapp-float:hover { transform: scale(1.08); }
+
+        .chatbot-float {
+            position: fixed;
+            bottom: 22px;
+            right: 22px;
+            z-index: 999;
+        }
+        .chatbot-toggle {
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            font-size: 1.4rem;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(30, 58, 47, 0.4);
+            transition: transform 0.25s;
+        }
+        .chatbot-toggle:hover { transform: scale(1.08); }
+
+        .chatbot-panel {
+            display: none;
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            width: 320px;
+            max-width: calc(100vw - 44px);
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            flex-direction: column;
+        }
+        .chatbot-panel.open { display: flex; }
+        .chatbot-header {
+            background: var(--primary);
+            color: #fff;
+            padding: 0.8rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .chatbot-header h4 { color: #fff; font-size: 0.9rem; }
+        .chatbot-close {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.3rem;
+            cursor: pointer;
+        }
+        .chatbot-messages {
+            padding: 0.9rem;
+            max-height: 260px;
+            overflow-y: auto;
+            font-size: 0.82rem;
+            background: #fafafa;
+        }
+        .bot-msg,
+        .user-msg {
+            padding: 0.55rem 0.8rem;
+            border-radius: 10px;
+            margin-bottom: 0.5rem;
+            line-height: 1.45;
+            max-width: 85%;
+        }
+        .bot-msg { background: #eef2ef; color: var(--primary); }
+        .user-msg { background: var(--secondary); color: #fff; margin-left: auto; }
+        .chatbot-quick-replies {
+            display: flex;
+            gap: 0.4rem;
+            padding: 0.6rem 0.9rem;
+            flex-wrap: wrap;
+            border-top: 1px solid var(--border);
+        }
+        .quick-btn {
+            background: var(--bg-cream);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 0.35rem 0.8rem;
+            font-size: 0.72rem;
+            font-family: 'Inter', sans-serif;
+            color: var(--primary);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .quick-btn:hover {
+            background: var(--secondary);
+            color: #fff;
+            border-color: var(--secondary);
+        }
+        .chatbot-input-row { display: flex; border-top: 1px solid var(--border); }
+        .chatbot-input-row input {
+            flex: 1;
+            border: none;
+            padding: 0.8rem 1rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.82rem;
+            outline: none;
+        }
+        .chatbot-input-row button {
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 0 1.1rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media (max-width: 992px) {
+            .top-bar-inner {
+                grid-template-columns: auto 1fr auto;
+                row-gap: 0.3rem;
+            }
+            .top-bar-left { display: none; }
+            .top-bar-logo { grid-column: 1 / 2; justify-self: start; }
+            .top-bar-contacts {
+                grid-column: 2 / 4;
+                justify-content: flex-end;
+                gap: 0.5rem 0.9rem;
+            }
+            .top-bar-logo img { height: 38px !important; }
+            .top-bar-brand-name { font-size: 0.8rem; }
+
+            .nav-list li { font-size: 0.7rem; }
+            .hamburger { display: flex; }
+            .main-nav { display: none; width: 100%; justify-content: flex-start; }
+            .main-nav.open { display: block; }
+            .nav-list {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.2rem;
+                padding: 0.5rem 0;
+                width: 100%;
+            }
+            .nav-list li { width: 100%; font-size: 0.8rem; }
+            .nav-list li a { padding: 0.5rem 0.8rem; width: 100%; }
+            .dropdown-menu {
+                position: static;
+                box-shadow: none;
+                border: none;
+                padding-left: 1rem;
+                background: #fafafa;
+                border-radius: 0;
+            }
+
+            .who-grid { grid-template-columns: 1fr; gap: 2rem; }
+        }
+
+        @media (max-width: 600px) {
+            .top-bar-inner { grid-template-columns: auto 1fr; }
+            .top-bar-logo { grid-column: 1 / 3; justify-self: center; }
+            .top-bar-contacts { grid-column: 1 / 3; justify-content: center; width: 100%; }
+            .top-bar-brand-name span { display: none; }
+            .top-bar-item span { display: none; }
+            .top-bar-item i { font-size: 1rem; }
+
+            .section { padding: 3rem 1rem; }
+            .hero { min-height: 45vh; padding: 3rem 1rem; }
+            .cta-banner { padding: 2.4rem 1.2rem; border-radius: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================
+         TOP BAR
+         ============================================================ -->
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+
+            <div class="top-bar-left"></div>
+
+            <a href="index.html" class="top-bar-logo">
+               <img src="images/logo.jpeg" alt="Dream Package Adventures logo" />
+               <div class="top-bar-brand-name">
+                   Dream Package Adventures
+                   <span>Safari and Travel</span>
+               </div>
+            </a>
+
+            <div class="top-bar-contacts">
+                <a href="mailto:info@dreampackageadventures.com" class="top-bar-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@dreampackageadventures.com</span>
+                </a>
+                <a href="tel:+254758273319" class="top-bar-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+254 758 273 319</span>
+                </a>
+                <div class="top-bar-socials">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         MAIN NAV
+         ============================================================ -->
+    <header class="site-header" id="siteHeader">
+        <div class="nav-bar">
+            <div class="container nav-container">
+
+                <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                </button>
+
+                <nav class="main-nav" id="mainNav" role="navigation" aria-label="Main navigation">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">Safaris <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="kenya-safaris.html">Kenya Safaris</a></li>
+                                <li><a href="tanzania-safaris.html">Tanzania Safaris</a></li>
+                                <li><a href="uganda-safaris.html">Uganda Safaris</a></li>
+                                <li><a href="botswana-safaris.html">Botswana Safaris</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">Getaways <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="local-adventures.html">Local Adventures</a></li>
+                                <li><a href="international-packages.html">International Packages</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="car-and-chopper-hire.html">Vehicle and Chopper Hire</a></li>
+                        <li><a href="about.html" class="active">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================================
+         HERO — ABOUT US
+         ============================================================ -->
+    <section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('images/about-hero.jpg');">
+        <div class="container hero-content">
+            <h1>About Us</h1>
+            <p class="hero-sub">We are Dream Package Adventures — a Kenyan safari and travel company built by people who grew up on these trails.</p>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         WHO WE ARE (intro block)
+         ============================================================ -->
+    <section class="section">
+        <div class="container">
+            <span class="eyebrow">Who We Are</span>
+            <h2 class="section-title">A Kenyan Company, Rooted in Africa</h2>
+            <p class="section-sub">We are a team of local guides, drivers, and travel planners based in Nairobi. Our job is simple to make your journey through Africa feel personal, unhurried, and unforgettable.</p>
+
+            <div class="who-grid">
+                <div class="who-image">
+                    <img src="images/about-team.jpg" alt="Dream Package Adventures team in Nairobi" loading="lazy" />
+                </div>
+                <div class="who-text">
+                    <h3>Local Knowledge, Personal Service</h3>
+                    <p>We've spent years on these roads. We know which park gates open at dawn, which lodges treat guests like family, and which river bend the elephants cross at dusk. That kind of knowledge doesn't come from a booking platform it comes from living here.</p>
+                    <p>When you travel with us, you're not handed off to a third party. You speak to the same people who plan your trip and often guide it too. One team, from the first email to the last airport drop-off.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         OUR STORY
+         ============================================================ -->
+    <section class="section" style="background: var(--bg-light);">
+        <div class="container">
+            <span class="eyebrow">Our Story</span>
+            <h2 class="section-title">How We Started</h2>
+            <div class="prose">
+                <p>Dream Package Adventures began as a small Nairobi outfit with a single Land Cruiser, a well-worn road atlas, and a simple idea: that African travel should be led by Africans, told in our own voice, and shaped around the traveller not the itinerary template.</p>
+                <p>Our founders, a safari guide and a hotelier, had both spent years watching visitors move through Kenya on tight, packaged schedules. They wanted to build something slower and more honest. Small groups. Real conversations. Time to sit still and let the bush breathe.</p>
+                <p>Over the years we've grown new vehicles, more guides, expanded routes into Tanzania, Uganda, Botswana, and beyond. But the founding idea hasn't changed. We still run the company the same way: one guest at a time, one carefully planned journey, one honest conversation at the start.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         WHAT WE DO
+         ============================================================ -->
+    <section class="section">
+        <div class="container">
+            <span class="eyebrow">What We Do</span>
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-sub">Everything we offer is designed around one thing — helping you experience Africa the way it deserves to be experienced.</p>
+
+                       <div class="services-grid">
+                <div class="service-card">
+                    <h3>African Safaris</h3>
+                    <p>Tailor-made safaris across Kenya, Tanzania, Uganda, and Botswana — from short budget escapes to fully hosted luxury journeys.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Local &amp; International Getaways</h3>
+                    <p>Weekend coastal escapes to Mombasa and Malindi, plus curated international packages for Kenyan travellers.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Vehicle &amp; Chopper Hire</h3>
+                    <p>Safari-ready 4x4s with or without a driver, plus helicopter charters for scenic flights, VIP transfers, and aerial safaris.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Custom Travel Planning</h3>
+                    <p>Honeymoons, family trips, photography expeditions, corporate retreats — we build the itinerary around you, not the other way round.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         OUR VALUES
+         ============================================================ -->
+    <section class="section" style="background: var(--bg-light);">
+        <div class="container">
+            <span class="eyebrow">What We Stand For</span>
+            <h2 class="section-title">Our Values</h2>
+            <p class="section-sub">These are the standards we hold every single trip to — no exceptions, no small print.</p>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Local Expertise</h3>
+                    <p>We are Kenyan, born and raised. Our guides know the parks, the people, and the small details that turn a good trip into a great one.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Honest Pricing</h3>
+                    <p>No hidden fees, no surprise charges, no pressure. You see the full cost before you commit — and it stays that way.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Responsible Travel</h3>
+                    <p>We work with lodges that respect wildlife and employ locally, and we contribute a portion of every safari fee to conservation projects.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Personal Service</h3>
+                    <p>You speak to a real person, every time. Someone who knows your trip by name and is reachable throughout your journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         TEAM
+         ============================================================ -->
+    <section class="section">
+        <div class="container">
+            <span class="eyebrow">The People Behind Your Trip</span>
+            <h2 class="section-title">Meet the Team</h2>
+            <p class="section-sub">A small team with a shared belief — that travel should feel personal, and that Africa is best shown by the people who call it home.</p>
+
+            <div class="team-grid">
+                <div class="team-card">
+                    <img src="images/team-1.jpg" alt="Grace M., Co-Founder and Safari Director" loading="lazy" />
+                    <h4>Grace M.</h4>
+                    <span class="role">Co-Founder &amp; Safari Director</span>
+                    <p>Grew up near Amboseli. Designs every itinerary with the same care she'd give her own family's trip.</p>
+                </div>
+                <div class="team-card">
+                    <img src="images/team-2.jpg" alt="David O., Head Guide and Logistics" loading="lazy" />
+                    <h4>David O.</h4>
+                    <span class="role">Head Guide &amp; Logistics</span>
+                    <p>Certified KPSGA guide. Knows every park gate, ranger, and hidden waterhole across East Africa.</p>
+                </div>
+                <div class="team-card">
+                    <img src="images/team-3.jpg" alt="Faith W., Customer Experience Manager" loading="lazy" />
+                    <h4>Faith W.</h4>
+                    <span class="role">Customer Experience</span>
+                    <p>Your first reply, your last follow-up. Makes sure every detail lands exactly as promised.</p>
+                </div>
+                <div class="team-card">
+                    <img src="images/team-4.jpg" alt="Peter N., Fleet and Hire Specialist" loading="lazy" />
+                    <h4>Peter N.</h4>
+                    <span class="role">Fleet &amp; Hire Specialist</span>
+                    <p>Keeps every 4x4 safari-ready. Handles helicopter charters, road transfers, and last-minute changes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         CREDENTIALS
+         ============================================================ -->
+    <section class="credentials">
+        <div class="container">
+            <span class="eyebrow" style="color: var(--secondary);">Recognised &amp; Certified</span>
+            <h2 class="section-title">Credentials</h2>
+            <div class="badge-row">
+                <span>Kenya Tourism Board Member</span>
+                <span>Eco-Tourism Kenya Certified</span>
+                <span>TripAdvisor Certificate of Excellence</span>
+                <span>ISO 9001:2024 (Travel Services)</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         CTA
+         ============================================================ -->
+    <section class="section">
+        <div class="container">
+            <div class="cta-banner">
+                <h2>Ready to Travel With Us?</h2>
+                <p>Tell us who's travelling, how long you have, and what you'd love to see. We'll come back with a tailored itinerary — usually within 24 hours.</p>
+                <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <img src="images/logo.jpeg" alt="Dream Package Adventures logo" />
+                </div>
+                <h4>Dream Package Adventures</h4>
+                <p>Your gateway to Africa's wild heart.</p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+254758273319">+254 758 273 319</a></p>
+                <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/254758273319" target="_blank">Chat on WhatsApp</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@dreampackageadventures.com">info@dreampackageadventures.com</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="kenya-safaris.html">Kenya Safaris</a></li>
+                    <li><a href="tanzania-safaris.html">Tanzania Safaris</a></li>
+                    <li><a href="uganda-safaris.html">Uganda Safaris</a></li>
+                    <li><a href="botswana-safaris.html">Botswana Safaris</a></li>
+                    <li><a href="local-adventures.html">Local Adventures</a></li>
+                    <li><a href="international-packages.html">International Packages</a></li>
+                    <li><a href="car-and-chopper-hire.html">Vehicle &amp; Chopper Hire</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Dream Package Adventures. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+         FLOATING WHATSAPP
+         ============================================================ -->
+    <a href="https://wa.me/254758273319" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ============================================================
+         AI CHATBOT
+         ============================================================ -->
+    <div class="chatbot-float" id="chatbotFloat">
+        <button class="chatbot-toggle" id="chatbotToggle" aria-label="Open AI travel assistant">
+            <i class="fas fa-robot"></i>
+        </button>
+        <div class="chatbot-panel" id="chatbotPanel">
+            <div class="chatbot-header">
+                <h4><i class="fas fa-robot"></i> Dream Package AI</h4>
+                <button class="chatbot-close" id="chatbotClose">&times;</button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="bot-msg">Welcome. I am your safari assistant. Ask me about Kenya safaris, vehicle hire, or anything else.</div>
+            </div>
+            <div class="chatbot-quick-replies" id="quickReplies">
+                <button class="quick-btn" data-msg="Kenya Safaris">Kenya Safaris</button>
+                <button class="quick-btn" data-msg="Vehicle Hire">Vehicle Hire</button>
+                <button class="quick-btn" data-msg="Contact a human agent">Contact Human</button>
+            </div>
+            <div class="chatbot-input-row">
+                <input type="text" id="chatbotInput" placeholder="Ask me anything..." aria-label="Chat input" />
+                <button id="chatbotSend" aria-label="Send message"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/chatbot.js"></script>
+
+    <script>
+        (function () {
+            const hamburger = document.getElementById('hamburger');
+            const mainNav = document.getElementById('mainNav');
+            if (hamburger && mainNav) {
+                hamburger.addEventListener('click', function () {
+                    mainNav.classList.toggle('open');
+                });
+            }
+        })();
+    </script>
+</body>
+</html>

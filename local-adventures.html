@@ -1,52 +1,1260 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Local Adventures – Dream Package Adventures</title>
-    <meta name="description" content="Kenya domestic getaways – Mombasa beach resorts, Malindi marine parks, weekend escapes for residents." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Local Adventures · Dream Package Adventures</title>
+  <meta name="description" content="Kenya domestic getaways – Mombasa beach resorts, Malindi marine parks, weekend escapes for residents." />
+
+  <!-- ===== FAVICON ===== -->
+  <link rel="icon" type="image/jpeg" href="images/logo.jpeg" />
+  <link rel="shortcut icon" type="image/jpeg" href="images/logo.jpeg" />
+  <link rel="apple-touch-icon" href="images/logo.jpeg" />
+
+  <!-- ===== INTER FONT ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+
+  <!-- ===== FONT AWESOME (for footer social icons) ===== -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <style>
+    /* ---------- GLOBAL RESET & VARIABLES ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      /* Brand colour theme (matches main site) */
+      --color-primary: #1e3a2f;        /* deep forest green */
+      --color-accent: #b8860b;         /* gold / mustard */
+      --color-accent-hover: #9a7209;   /* darker gold */
+      --color-bg-light: #f5f0eb;       /* soft beige */
+      --color-text: #222;
+      --color-text-muted: #555;
+      --color-white: #ffffff;
+      --color-border: #e5e0d8;
+      --color-whatsapp: #25d366;
+      --font-main: 'Inter', sans-serif;
+    }
+
+    html, body {
+      font-family: var(--font-main);
+      background: #ffffff;
+      color: var(--color-text);
+      line-height: 1.6;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    /* ensure no italic anywhere */
+    i, em, .fa, .fas, .far, .fab, .fal, .fad, .fak {
+      font-style: normal !important;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-family: var(--font-main);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      color: var(--color-primary);
+      font-style: normal;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section {
+      padding: 64px 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 32px;
+      color: var(--color-primary);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      border-left: 5px solid var(--color-accent);
+      padding-left: 20px;
+    }
+
+    /* ---------- BUTTONS ---------- */
+    .btn {
+      display: inline-block;
+      font-family: var(--font-main);
+      font-weight: 600;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 12px 26px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+      border: 2px solid transparent;
+      cursor: pointer;
+      font-style: normal;
+    }
+
+    .btn-primary {
+      background: var(--color-accent);
+      color: var(--color-white);
+      border-color: var(--color-accent);
+    }
+
+    .btn-primary:hover {
+      background: var(--color-accent-hover);
+      border-color: var(--color-accent-hover);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--color-primary);
+      border-color: var(--color-primary);
+    }
+
+    .btn-outline:hover {
+      background: var(--color-primary);
+      color: var(--color-white);
+    }
+
+    /* ---------- HEADER (clean, matches main site) ---------- */
+    .site-header {
+      background: #ffffff;
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo img {
+      height: 52px;
+      width: auto;
+      display: block;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+
+    .logo-text strong {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      letter-spacing: -0.02em;
+    }
+
+    .logo-text span {
+      font-size: 0.6rem;
+      font-weight: 500;
+      color: var(--color-accent);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--color-text);
+      font-weight: 500;
+      font-size: 0.85rem;
+      letter-spacing: -0.01em;
+      transition: color 0.2s;
+      font-style: normal;
+    }
+
+    .nav-links a:hover {
+      color: var(--color-accent);
+    }
+
+    /* ---------- HERO — FULL VIEWPORT COVER ---------- */
+    .hero {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      min-height: 50vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      padding: 60px 24px;
+      position: relative;
+      margin: 0;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      margin-bottom: 18px;
+      color: #fff;
+      text-shadow: 0 4px 14px rgba(0,0,0,0.5);
+      line-height: 1.15;
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2.2vw, 1.25rem);
+      font-weight: 400;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #f0f0f0;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    /* ---------- CARD GRID (local adventures) ---------- */
+    .grid {
+      display: grid;
+      gap: 32px;
+    }
+
+    .dest-card {
+      background: #ffffff;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .dest-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+    }
+
+    .dest-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      background: #e8e4dd;
+    }
+
+    .dest-info {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .dest-info h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    .dest-info p {
+      font-size: 0.92rem;
+      color: var(--color-text-muted);
+      margin-bottom: 8px;
+    }
+
+    .dest-info p strong {
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+
+    .dest-info .btn {
+      margin-top: auto;
+      align-self: flex-start;
+      padding: 10px 22px;
+      font-size: 0.75rem;
+    }
+
+    /* ---------- ITINERARIES SECTION ---------- */
+    .itineraries-section {
+      background: var(--color-bg-light);
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+    }
+
+    .itinerary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      margin-top: 24px;
+    }
+
+    /* ---------- ITINERARY CARD — image on top, description below ---------- */
+    .itinerary-card {
+      background: #ffffff;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .itinerary-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+    }
+
+    /* Image container — holds the itinerary image */
+    .itinerary-card .itinerary-image {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      background: #e8e4dd;
+      background-image: linear-gradient(135deg, #e8e4dd 0%, #ddd7cd 100%);
+      border-bottom: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #a89f8f;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .itinerary-card .itinerary-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .itinerary-card .itinerary-body {
+      padding: 22px 22px 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .itinerary-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--color-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .itinerary-card p {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      line-height: 1.65;
+      margin-bottom: 14px;
+      flex: 1;
+    }
+
+    .itinerary-card .meta {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--color-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: auto;
+      padding-top: 12px;
+      border-top: 1px solid #efeae2;
+    }
+
+    .itinerary-subhead {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin: 48px 0 20px;
+      color: var(--color-primary);
+      letter-spacing: -0.02em;
+      border-bottom: 2px solid var(--color-accent);
+      padding-bottom: 10px;
+      display: inline-block;
+    }
+
+    .itinerary-intro {
+      max-width: 800px;
+      margin-bottom: 24px;
+      font-size: 1rem;
+      color: var(--color-text-muted);
+    }
+
+    /* ---------- INQUIRY FORM ---------- */
+    .inquiry-section {
+      background: var(--color-bg-light);
+      padding: 72px 24px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .form-container {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .form-container h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      color: var(--color-primary);
+    }
+
+    .form-container .form-sub {
+      font-size: 1rem;
+      color: var(--color-text-muted);
+      margin-bottom: 40px;
+      font-weight: 400;
+    }
+
+    .inquiry-form {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group label {
+      font-family: var(--font-main);
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-primary);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 15px 18px;
+      font-family: var(--font-main);
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--color-text);
+      background: #ffffff;
+      border: 1px solid #d9d3c9;
+      border-radius: 5px;
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      -webkit-appearance: none;
+      appearance: none;
+      font-style: normal;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.12);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%231e3a2f' d='M6 8L2 4h8z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 18px center;
+      background-size: 12px;
+      padding-right: 48px;
+    }
+
+    .btn-submit {
+      align-self: flex-start;
+      background: var(--color-accent);
+      color: var(--color-white);
+      font-family: var(--font-main);
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 16px 40px;
+      border: 2px solid var(--color-accent);
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+      margin-top: 8px;
+    }
+
+    .btn-submit:hover {
+      background: var(--color-accent-hover);
+      border-color: var(--color-accent-hover);
+    }
+
+    .form-message {
+      margin-top: 20px;
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: #1e7a3f;
+      background: #e8f5ec;
+      padding: 14px 18px;
+      border-left: 4px solid #1e7a3f;
+      border-radius: 4px;
+      display: none;
+    }
+
+    .form-message.show {
+      display: block;
+    }
+
+    /* ---------- FOOTER (with logo) ---------- */
+    .site-footer {
+      background: var(--color-primary);
+      color: #d8d8d8;
+      padding: 56px 0 28px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .footer-logo {
+      max-width: 100px;
+      height: auto;
+      display: block;
+      margin-bottom: 14px;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+
+    .footer-col h4 {
+      color: #ffffff;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .footer-col p,
+    .footer-col ul {
+      font-size: 0.88rem;
+      line-height: 1.9;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-col ul li a {
+      color: #c8c8c8;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--color-accent);
+    }
+
+    .footer-col a {
+      color: #c8c8c8;
+      text-decoration: none;
+    }
+
+    .footer-col a:hover {
+      color: var(--color-accent);
+    }
+
+    .footer-col i {
+      color: var(--color-accent);
+      margin-right: 6px;
+      font-style: normal;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-top: 40px;
+      padding: 20px 24px 0;
+      font-size: 0.78rem;
+      color: #a5a5a5;
+      text-align: center;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 768px) {
+      .hero {
+        min-height: 90vh;
+        background-attachment: scroll;
+      }
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      .hero-sub {
+        font-size: 1rem;
+      }
+      .section-title {
+        font-size: 1.5rem;
+      }
+      .site-header .container {
+        flex-direction: column;
+        gap: 14px;
+      }
+      .nav-links {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .inquiry-section {
+        padding: 48px 16px;
+      }
+      .btn-submit {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .grid {
+        grid-template-columns: 1fr !important;
+      }
+      .itinerary-grid {
+        grid-template-columns: 1fr;
+      }
+      .logo img {
+        height: 42px;
+      }
+      .logo-text strong {
+        font-size: 0.95rem;
+      }
+      .hero {
+        min-height: 85vh;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- ===== NAVIGATION (copy from index) ===== -->
-    <header class="site-header" id="siteHeader">...</header>
 
-    <!-- ===== HERO ===== -->
-    <section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/local-hero.jpg'); min-height: 50vh;">
-        <div class="container hero-content">
-            <h1>Local Kenyan Getaways</h1>
-            <p class="hero-sub">Sun, sand, and Swahili culture – perfect for weekends, families, and honeymooners.</p>
+  <!-- ===== HEADER (with logo) ===== -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="images/logo.jpeg" alt="Dream Package Adventures logo" />
+        <div class="logo-text">
+          <strong>Dream Package Adventures</strong>
+          <span>Safari &amp; Travel</span>
         </div>
-    </section>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="kenya-safaris.html">Safaris</a></li>
+        <li><a href="local-adventures.html">Local</a></li>
+        <li><a href="#inquiry">Contact</a></li>
+      </ul>
+    </div>
+  </header>
 
-    <!-- ===== MOMBASA ===== -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Mombasa – Coastal Heritage</h2>
-            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
-                <div class="dest-card"><img src="images/mombasa-beach.jpg" alt="Mombasa beach" loading="lazy" /><div class="dest-info"><h3>Beach Resorts</h3><p>White sand, swimming, water sports, and sunbathing at Diani, Bamburi, and Nyali.</p><p><strong>From $150</strong> / night</p><a href="contact.html" class="btn btn-primary">Book Now</a></div></div>
-                <div class="dest-card"><img src="images/mombasa-oldtown.jpg" alt="Old Town Mombasa" loading="lazy" /><div class="dest-info"><h3>Old Town & Fort Jesus</h3><p>Explore centuries of Swahili history, spice markets, and Portuguese forts.</p><p><strong>From $80</strong> / tour</p><a href="contact.html" class="btn btn-primary">Book Now</a></div></div>
-                <div class="dest-card"><img src="images/mombasa-water.jpg" alt="Water sports" loading="lazy" /><div class="dest-info"><h3>Water Sports</h3><p>Snorkeling, diving, jet skiing, and boat trips to Wasini Island.</p><p><strong>From $60</strong> / activity</p><a href="contact.html" class="btn btn-primary">Book Now</a></div></div>
-            </div>
+  <!-- ===== HERO ===== -->
+  <section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/local-hero.jpg');">
+    <div class="container hero-content">
+      <h1>Local Kenyan Getaways</h1>
+      <p class="hero-sub">Sun, sand, and Swahili culture – perfect for weekends, families, and honeymooners.</p>
+    </div>
+  </section>
+
+  <!-- ===== MOMBASA ===== -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Mombasa – Coastal Heritage</h2>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+        <div class="dest-card">
+          <img src="images/mombasa-beach.jpg" alt="Mombasa beach" loading="lazy" />
+          <div class="dest-info">
+            <h3>Beach Resorts</h3>
+            <p>White sand, swimming, water sports, and sunbathing at Diani, Bamburi, and Nyali.</p>
+            <p><strong>From $150</strong> / night</p>
+            <a href="#inquiry" class="btn btn-primary">Book Now</a>
+          </div>
         </div>
-    </section>
-
-    <!-- ===== MALINDI ===== -->
-    <section class="section" style="background: var(--color-light);">
-        <div class="container">
-            <h2 class="section-title">Malindi – Marine Paradise</h2>
-            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
-                <div class="dest-card"><img src="images/malindi-marine.jpg" alt="Malindi Marine Park" loading="lazy" /><div class="dest-info"><h3>Marine Park</h3><p>Snorkel and dive among coral reefs, turtles, and tropical fish.</p><p><strong>From $100</strong> / day</p><a href="contact.html" class="btn btn-primary">Book Now</a></div></div>
-                <div class="dest-card"><img src="images/malindi-watamu.jpg" alt="Watamu" loading="lazy" /><div class="dest-info"><h3>Watamu & Gedi Ruins</h3><p>Relax in Watamu or explore the ancient Swahili ruins of Gedi.</p><p><strong>From $90</strong> / tour</p><a href="contact.html" class="btn btn-primary">Book Now</a></div></div>
-                <div class="dest-card"><img src="images/malindi-historic.jpg" alt="Malindi historical" loading="lazy" /><div class="dest-info"><h3>Historical Sites</h3><p>Visit Vasco da Gama pillar, and the Portuguese chapel – coastal history.</p><p><strong>From $50</strong> / entry</p><a href="contact.html" class="btn btn-primary">Book Now</a></div></div>
-            </div>
+        <div class="dest-card">
+          <img src="images/mombasa-oldtown.jpg" alt="Old Town Mombasa" loading="lazy" />
+          <div class="dest-info">
+            <h3>Old Town &amp; Fort Jesus</h3>
+            <p>Explore centuries of Swahili history, spice markets, and Portuguese forts.</p>
+            <p><strong>From $80</strong> / tour</p>
+            <a href="#inquiry" class="btn btn-primary">Book Now</a>
+          </div>
         </div>
-    </section>
+        <div class="dest-card">
+          <img src="images/mombasa-water.jpg" alt="Water sports" loading="lazy" />
+          <div class="dest-info">
+            <h3>Water Sports</h3>
+            <p>Snorkeling, diving, jet skiing, and boat trips to Wasini Island.</p>
+            <p><strong>From $60</strong> / activity</p>
+            <a href="#inquiry" class="btn btn-primary">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- ===== FOOTER, WHATSAPP, CHATBOT (copy from kenya-safaris) ===== -->
+  <!-- ===== MALINDI ===== -->
+  <section class="section" style="background: var(--color-bg-light);">
+    <div class="container">
+      <h2 class="section-title">Malindi – Marine Paradise</h2>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+        <div class="dest-card">
+          <img src="images/malindi-marine.jpg" alt="Malindi Marine Park" loading="lazy" />
+          <div class="dest-info">
+            <h3>Marine Park</h3>
+            <p>Snorkel and dive among coral reefs, turtles, and tropical fish.</p>
+            <p><strong>From $100</strong> / day</p>
+            <a href="#inquiry" class="btn btn-primary">Book Now</a>
+          </div>
+        </div>
+        <div class="dest-card">
+          <img src="images/malindi-watamu.jpg" alt="Watamu" loading="lazy" />
+          <div class="dest-info">
+            <h3>Watamu &amp; Gedi Ruins</h3>
+            <p>Relax in Watamu or explore the ancient Swahili ruins of Gedi.</p>
+            <p><strong>From $90</strong> / tour</p>
+            <a href="#inquiry" class="btn btn-primary">Book Now</a>
+          </div>
+        </div>
+        <div class="dest-card">
+          <img src="images/malindi-historic.jpg" alt="Malindi historical" loading="lazy" />
+          <div class="dest-info">
+            <h3>Historical Sites</h3>
+            <p>Visit Vasco da Gama pillar, and the Portuguese chapel – coastal history.</p>
+            <p><strong>From $50</strong> / entry</p>
+            <a href="#inquiry" class="btn btn-primary">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SAFARI ITINERARIES ===== -->
+  <section class="section itineraries-section">
+    <div class="container">
+      <h2 class="section-title">Safari Itineraries &amp; Packages</h2>
+      <p class="itinerary-intro">
+        Carefully curated journeys across East Africa – from the Great Migration to gorilla trekking. Each itinerary is fully customisable.
+      </p>
+
+      <!-- ===== KENYA ===== -->
+      <h3 class="itinerary-subhead">Kenya</h3>
+      <div class="itinerary-grid">
+
+        <div class="itinerary-card">
+          <div class="itinerary-image">
+            <img src="images/kenya-big5-5d.jpg" alt="5 Days Kenya Big Five Safari" loading="lazy" />
+          </div>
+          <div class="itinerary-body">
+            <h3>5 Days Kenya Big Five Safari</h3>
+            <p>A short trip built around the Masai Mara, where you can see lion, leopard, elephant, buffalo and rhino. It usually involves two game drives a day.</p>
+            <div class="meta">5 days · Masai Mara</div>
+          </div>
+        </div>
+
+        <div class="itinerary-card">
+          <div class="itinerary-image">
+            <img src="images/kenya-big5-8d.jpg" alt="8 Days Kenya Big Five Safari" loading="lazy" />
+          </div>
+          <div class="itinerary-body">
+            <h3>8 Days Kenya Big Five Safari</h3>
+            <p>A longer version that typically adds Amboseli (elephants with Kilimanjaro behind), plus Lake Nakuru or Samburu for rhino and rarer species.</p>
+            <div class="meta">8 days · Amboseli · Nakuru / Samburu</div>
+          </div>
+        </div>
+
+        <div class="itinerary-card">
+          <div class="itinerary-image">
+            <img src="images/kenya-family-7d.jpg" alt="7 Days Kenya Family Safari" loading="lazy" />
+          </div>
+          <div class="itinerary-body">
+            <h3>7 Days Kenya Family Safari</h3>
+            <p>A relaxed pace with family-friendly lodges. The photo suggests guide-led wildlife education for kids, and shorter drives are likely.</p>
+            <div class="meta">7 days · Family friendly</div>
+          </div>
+        </div>
+
+        <div class="itinerary-card">
+          <div class="itinerary-image">
+            <img src="images/kenya-honeymoon-6d.jpg" alt="6 Days Kenya Honeymoon Safari" loading="lazy" />
+          </div>
+          <div class="itinerary-body">
+            <h3>6 Days Kenya Honeymoon Safari Tour</h3>
+            <p>A short romantic trip, with private dinners in the bush (the photo shows one) and scenic lodges.</p>
+            <div class="meta">6 days · Romantic</div>
+          </div>
+        </div>
+
+        <div class="itinerary-card">
+          <div class="itinerary-image">
+            <img src="images/kenya-honeymoon-14d.jpg" alt="14 Days Kenya Honeymoon Safari" loading="lazy" />
+          </div>
+          <div class="itinerary-body">
+            <h3>14 Days Kenya Honeymoon Safari Tour</h3>
+            <p>An extended version, likely combining several parks with a long stay at a luxury lodge (the photo shows a pool villa), and possibly a beach stay.</p>
+            <div class="meta">14 days · Luxury · Beach</div>
+          </div>
+        </div>
+
+        <div class="itinerary-card">
+          <div class="itinerary-image">
+            <img src="images/kenya-luxury-8d.jpg" alt="8 Days Kenya Luxury Safari" loading="lazy" />
+          </div>
+          <div class="itinerary-body">
+            <h3>8 Days Kenya Luxury Safari</h3>
+            <p>High-end lodges or tented camps, private vehicles and a top-tier guide. The photo shows a classic safari van in the Mara.</p>
+            <div class="meta">8 days · Luxury</div>
+          </div>
+        </div>
+
+        <div class="itinerary-card">
+          <div class="itinerary-image">
+            <img src="images/kenya-luxury-9d.jpg" alt="9 Days Kenya Luxury Safari" loading="lazy" />
+          </div>
+          <div class="itinerary-body">
+            <h3>9 Days Kenya Luxury Safari</h3>
+            <p>Similar to the 8-day trip with an extra day, probably at an additional location. The photo shows a sundowner dinner setup.</p>
+            <div class="meta">9 days · Luxury</div>
+          </div>
+        </div>
+
+        <div class="itinerary-card">
+          <div class="itinerary-image">
+            <img src="images/kenya-birding-7d.jpg" alt="7 Days Kenya Birding Safari" loading="lazy" />
+          </div>
+          <div class="itinerary-body">
+            <h3>7 Days Kenya Birding Safari</h3>
+            <p>Probably built around the Rift Valley lakes such as Naivasha, Baringo or Nakuru (the photo shows a pelican on a lake). It would be paced around early-morning and late-afternoon birding.</p>
+            <div class="meta">7 days · Birding</div>
+          </div>
+        </div>
+
+        <div class="itinerary-card">
+          <div class="itinerary-image">
+            <img src="images/kenya-birding-14d.jpg" alt="14 Days Kenya Bird-Watching Safari" loading="lazy" />
+          </div>
+          <div class="itinerary-body">
+            <h3>14 Days Kenya Bird-Watching Safari</h3>
+            <p>A deep birding trip across several habitats, from lakes to savannah to highlands, aimed at a long species list.</p>
+            <div class="meta">14 days · Birding</div>
+          </div>
+        </div>
+
+        <div class="itinerary-card">
+          <div class="itinerary-image">
+            <img src="images/kenya-walking-8d.jpg" alt="8 Days Kenya Walking Safari" loading="lazy" />
+          </div>
+          <div class="itinerary-body">
+            <h3>8 Days Kenya Walking Safari</h3>
+            <p>Guided bush walks on conservancies, where you see wildlife on foot with an armed ranger. The photo shows a family close to a rhino.</p>
+            <div class="meta">8 days · Walking</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ===== TANZANIA ===== -->
+      <h3 class="itinerary-subhead">Tanzania</h3>
+      <div class="itinerary-grid">
+
+        <div class="itinerary-card">
+          <div class="itinerary-image">
+            <img src="images/tz-migration-8d.jpg" alt="8 Days Serengeti Wildebeest Migration Safari" loading="lazy" />
+          </div>
+          <div class="itinerary-body">
+            <h3>8 Days Serengeti Wildebeest Migration Safari</h3>
+            <p>Follows the great herds through the Serengeti, with the exact area depending on the season. It may include river-crossing chances.</p>
+            <div class="meta">8 days · Migration</div>
+          </div>
+        </div>
+
+        <div class="itinerary-card">
+          <div class="itinerary-image">
+            <img src="images/tz-family-8d.jpg" alt="8 Days Tanzania Family Safari" loading="lazy" />
+          </div>
+          <div class="itinerary-body">
+            <h3>8 Days Tanzania Family Safari</h3>
+            <p>A northern circuit route (likely Tarangire, Ngorongoro Crater and the Serengeti) with child-friendly pacing.</p>
+            <div class="meta">8 days · Family</div>
+          </div>
+        </div>
+
+        <div class="itinerary-card">
+          <div class="itinerary-image">
+            <img src="images/tz-family-beach-12d.jpg" alt="12 Days Tanzania Family Safari & Beach" loading="lazy" />
+          </div>
+          <div class="itinerary-body">
+            <h3>12 Days Tanzania Family Safari &amp; Beach</h3>
+            <p>The safari above plus a beach stay, probably Zanzibar, so the family gets time to rest after the game drives.</p>
+            <div class="meta">12 days · Family · Zanzibar</div>
+          </div>
+        </div>
+
+        <div class="itinerary-card">
+          <div class="itinerary-image">
+            <img src="images/tz-honeymoon-6d.jpg" alt="6 Days Honeymoon Tanzania Safari" loading="lazy" />
+          </div>
+          <div class="itinerary-body">
+            <h3>6 Days Honeymoon Tanzania Safari</h3>
+            <p>A short, private trip with upscale camps. The photo shows a lodge deck at sunset.</p>
+            <div class="meta">6 days · Honeymoon</div>
+          </div>
+        </div>
+
+        <div class="itinerary-card">
+          <div class="itinerary-image">
+            <img src="images/tz-ultimate-6d.jpg" alt="6 Days Tanzania Ultimate Safari" loading="lazy" />
+          </div>
+          <div class="itinerary-body">
+            <h3>6 Days Tanzania Ultimate Safari</h3>
+            <p>A compact best-of trip, probably covering the headline parks in a short window.</p>
+            <div class="meta">6 days · Ultimate</div>
+          </div>
+        </div>
+
+        <div class="itinerary-card">
+          <div class="itinerary-image">
+            <img src="images/tz-ultimate-10d.jpg" alt="10 Days Ultimate Tanzania Safari" loading="lazy" />
+          </div>
+          <div class="itinerary-body">
+            <h3>10 Days Ultimate Tanzania Safari</h3>
+            <p>A fuller version of the same idea, giving more time in the Serengeti and Ngorongoro, with extra parks such as Lake Manyara or Tarangire.</p>
+            <div class="meta">10 days · Ultimate</div>
+          </div>
+        </div>
+
+        <div class="itinerary-card">
+          <div class="itinerary-image">
+            <img src="images/tz-birding-10d.jpg" alt="10 Days Luxury Bird Watching Safari in Northern Tanzania" loading="lazy" />
+          </div>
+          <div class="itinerary-body">
+            <h3>10 Days Stunning Luxury Bird Watching Safari in Northern Tanzania</h3>
+            <p>Birding from premium lodges in the north. The flamingo photo suggests soda lakes such as Natron, or Manyara.</p>
+            <div class="meta">10 days · Luxury birding</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ===== UGANDA ===== -->
+      <h3 class="itinerary-subhead">Uganda</h3>
+      <div class="itinerary-grid">
+
+        <div class="itinerary-card">
+          <div class="itinerary-image">
+            <img src="images/ug-birding-5d.jpg" alt="5 Days Uganda Savannah Birding Safari" loading="lazy" />
+          </div>
+          <div class="itinerary-body">
+            <h3>5 Days Uganda Savannah Birding Safari</h3>
+            <p>A short birding trip in Uganda's savannah parks, focused on species like the woodland kingfisher shown in the photo.</p>
+            <div class="meta">5 days · Birding</div>
+          </div>
+        </div>
+
+        <div class="itinerary-card">
+          <div class="itinerary-image">
+            <img src="images/ug-big5-7d.jpg" alt="7 Days Uganda Big Five Safari" loading="lazy" />
+          </div>
+          <div class="itinerary-body">
+            <h3>7 Days Uganda Big Five Safari</h3>
+            <p>Uganda's route to the Big Five, likely combining a park like Murchison Falls or Queen Elizabeth with a rhino sanctuary. The photo shows an elephant near a boat launch, so boat safaris may be included.</p>
+            <div class="meta">7 days · Big Five</div>
+          </div>
+        </div>
+
+        <div class="itinerary-card">
+          <div class="itinerary-image">
+            <img src="images/ug-birding-10d.jpeg" alt="10 Days Best of Uganda Birding Safari" loading="lazy" />
+          </div>
+          <div class="itinerary-body">
+            <h3>10 Days Best of Uganda Birding Safari</h3>
+            <p>The shoebill in the photo points to swamp birding, plus forest and savannah habitats for a large species count.</p>
+            <div class="meta">10 days · Birding</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ===== RWANDA ===== -->
+      <h3 class="itinerary-subhead">Rwanda</h3>
+      <div class="itinerary-grid">
+
+        <div class="itinerary-card">
+          <div class="itinerary-image">
+            <img src="images/rw-gorilla-6d.jpg" alt="6 Days Rwanda Gorilla Trekking and Wildlife Safari" loading="lazy" />
+          </div>
+          <div class="itinerary-body">
+            <h3>6 Days Rwanda Gorilla Trekking and Wildlife Safari</h3>
+            <p>Gorilla trekking in the volcanoes region plus other wildlife time. Gorilla treks need advance permits and are physically demanding.</p>
+            <div class="meta">6 days · Gorilla trekking</div>
+          </div>
+        </div>
+
+        <div class="itinerary-card">
+          <div class="itinerary-image">
+            <img src="images/rw-wildlife-6d.jpg" alt="6 Days Rwanda Wildlife Safari" loading="lazy" />
+          </div>
+          <div class="itinerary-body">
+            <h3>6 Days Rwanda Wildlife Safari</h3>
+            <p>Wildlife-focused, and the photo shows a chimpanzee with its baby, so primate tracking is likely part of it.</p>
+            <div class="meta">6 days · Primates</div>
+          </div>
+        </div>
+
+        <div class="itinerary-card">
+          <div class="itinerary-image">
+            <img src="images/rw-birding-9d.jpg" alt="9 Days Rwanda Birdwatching Safari" loading="lazy" />
+          </div>
+          <div class="itinerary-body">
+            <h3>9 Days Rwanda Birdwatching Safari</h3>
+            <p>Birding across Rwanda's forests and wetlands, including Albertine Rift endemics.</p>
+            <div class="meta">9 days · Birding</div>
+          </div>
+        </div>
+
+        <div class="itinerary-card">
+          <div class="itinerary-image">
+            <img src="images/rw-birding-primates-13d.jpg" alt="13 Days Rwanda Birding and Primates Tour" loading="lazy" />
+          </div>
+          <div class="itinerary-body">
+            <h3>13 Days Rwanda Birding and Primates Tour</h3>
+            <p>The longest Rwanda trip, combining birding with primates such as chimpanzees and gorillas.</p>
+            <div class="meta">13 days · Birding &amp; primates</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== INQUIRY FORM ===== -->
+  <section id="inquiry" class="inquiry-section">
+    <div class="form-container">
+      <h2>Safari Trip Inquiry</h2>
+      <p class="form-sub">Tell us about your dream trip — we'll craft the perfect itinerary.</p>
+
+      <form class="inquiry-form" id="safariForm" novalidate>
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="fullName" placeholder="e.g. Jane Doe" autocomplete="name" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="Enter your number" autocomplete="tel" />
+        </div>
+
+        <div class="form-group">
+          <label for="country">Select Country</label>
+          <select id="country" name="country" required>
+            <option value="" disabled selected>— Please choose an option —</option>
+            <option value="Kenya">Kenya</option>
+            <option value="Tanzania">Tanzania</option>
+            <option value="Uganda">Uganda</option>
+            <option value="Rwanda">Rwanda</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="startDate">Start Date</label>
+          <input type="date" id="startDate" name="startDate" required />
+        </div>
+
+        <div class="form-group">
+          <label for="endDate">End Date</label>
+          <input type="date" id="endDate" name="endDate" required />
+        </div>
+
+        <div class="form-group">
+          <label for="adults">Number of Adults</label>
+          <input type="number" id="adults" name="adults" min="1" value="1" required />
+        </div>
+
+        <div class="form-group">
+          <label for="children">Number of Children</label>
+          <input type="number" id="children" name="children" min="0" value="0" />
+        </div>
+
+        <div class="form-group">
+          <label for="address">Address</label>
+          <textarea id="address" name="address" rows="6" placeholder="Your full address"></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Submit</button>
+
+        <div class="form-message" id="formMessage">Thanks, we'll be in touch shortly.</div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER (with logo) ===== -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <img src="images/logo.jpeg" alt="Dream Package Adventures logo" class="footer-logo" />
+        <h4>Dream Package Adventures</h4>
+        <p>Crafting unforgettable journeys across East Africa — from coastal escapes to gorilla trekking.</p>
+        <p><i class="fas fa-phone"></i> <a href="tel:+254758273319">+254 758 273 319</a></p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:info@dreampackageadventures.com">info@dreampackageadventures.com</a></p>
+        <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="kenya-safaris.html">Kenya Safaris</a></li>
+          <li><a href="tanzania-safaris.html">Tanzania Safaris</a></li>
+          <li><a href="uganda-safaris.html">Uganda Safaris</a></li>
+          <li><a href="botswana-safaris.html">Botswana Safaris</a></li>
+          <li><a href="local-adventures.html">Local Getaways</a></li>
+          <li><a href="international-packages.html">International Packages</a></li>
+          <li><a href="car-and-chopper-hire.html">Vehicle &amp; Chopper Hire</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#inquiry">Contact</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <ul>
+          <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+          <li><a href="#"><i class="fab fa-tiktok"></i> TikTok</a></li>
+          <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Dream Package Adventures. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- ===== JAVASCRIPT (validation + inline success) ===== -->
+  <script>
+    (function() {
+      const form = document.getElementById('safariForm');
+      const messageEl = document.getElementById('formMessage');
+
+      function getDateValue(id) {
+        const el = document.getElementById(id);
+        return el ? el.value : '';
+      }
+
+      function validateForm() {
+        const country = document.getElementById('country').value;
+        const startDate = getDateValue('startDate');
+        const endDate = getDateValue('endDate');
+        const adults = document.getElementById('adults').value;
+
+        if (!country || !startDate || !endDate || !adults || parseInt(adults) < 1) {
+          alert('Please fill in country, start date, end date, and at least 1 adult.');
+          return false;
+        }
+
+        if (new Date(endDate) < new Date(startDate)) {
+          alert('End date must be on or after the start date.');
+          return false;
+        }
+
+        return true;
+      }
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        if (!validateForm()) {
+          return;
+        }
+
+        const formData = {
+          fullName: document.getElementById('fullName').value.trim(),
+          email: document.getElementById('email').value.trim(),
+          phone: document.getElementById('phone').value.trim(),
+          country: document.getElementById('country').value,
+          startDate: document.getElementById('startDate').value,
+          endDate: document.getElementById('endDate').value,
+          adults: parseInt(document.getElementById('adults').value, 10),
+          children: parseInt(document.getElementById('children').value, 10) || 0,
+          address: document.getElementById('address').value.trim()
+        };
+
+        console.log('Form data ready to send:', formData);
+
+        messageEl.classList.add('show');
+
+        setTimeout(() => {
+          messageEl.classList.remove('show');
+        }, 6000);
+      });
+
+      const startInput = document.getElementById('startDate');
+      const endInput = document.getElementById('endDate');
+      if (startInput && endInput) {
+        startInput.addEventListener('change', function() {
+          if (endInput.value && endInput.value < startInput.value) {
+            endInput.value = startInput.value;
+          }
+          endInput.min = startInput.value;
+        });
+      }
+    })();
+  </script>
+
 </body>
 </html>

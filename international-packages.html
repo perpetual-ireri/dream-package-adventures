@@ -5,15 +5,641 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>International Packages – Dream Package Adventures</title>
     <meta name="description" content="International holiday packages for Kenyan travelers – Maldives, South Africa, Dubai, Mauritius, China." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
+
+     <!-- ===== FAVICON ===== -->
+  <link rel="icon" type="image/jpeg" href="images/logo.jpeg" />
+  <link rel="shortcut icon" type="image/jpeg" href="images/logo.jpeg" />
+  <link rel="apple-touch-icon" href="images/logo.jpeg" />
+
+  <!-- ===== INTER FONT ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+
+  <!-- ===== FONT AWESOME (for footer social icons) ===== -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <style>
+    /* ---------- GLOBAL RESET & VARIABLES ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      /* Brand colour theme (matches main site) */
+      --color-primary: #1e3a2f;        /* deep forest green */
+      --color-accent: #b8860b;         /* gold / mustard */
+      --color-accent-hover: #9a7209;   /* darker gold */
+      --color-bg-light: #f5f0eb;       /* soft beige */
+      --color-text: #222;
+      --color-text-muted: #555;
+      --color-white: #ffffff;
+      --color-border: #e5e0d8;
+      --color-whatsapp: #25d366;
+      --font-main: 'Inter', sans-serif;
+    }
+
+    html, body {
+      font-family: var(--font-main);
+      background: #ffffff;
+      color: var(--color-text);
+      line-height: 1.6;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    /* ensure no italic anywhere */
+    i, em, .fa, .fas, .far, .fal, .fad, .fak {
+      font-style: normal !important;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-family: var(--font-main);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      color: var(--color-primary);
+      font-style: normal;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section {
+      padding: 64px 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 32px;
+      color: var(--color-primary);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      border-left: 5px solid var(--color-accent);
+      padding-left: 20px;
+    }
+
+    /* ---------- BUTTONS ---------- */
+    .btn {
+      display: inline-block;
+      font-family: var(--font-main);
+      font-weight: 600;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 12px 26px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+      border: 2px solid transparent;
+      cursor: pointer;
+      font-style: normal;
+    }
+
+    .btn-primary {
+      background: var(--color-accent);
+      color: var(--color-white);
+      border-color: var(--color-accent);
+    }
+
+    .btn-primary:hover {
+      background: var(--color-accent-hover);
+      border-color: var(--color-accent-hover);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--color-primary);
+      border-color: var(--color-primary);
+    }
+
+    .btn-outline:hover {
+      background: var(--color-primary);
+      color: var(--color-white);
+    }
+
+    /* ---------- HEADER (clean, matches main site) ---------- */
+    .site-header {
+      background: #ffffff;
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo img {
+      height: 52px;
+      width: auto;
+      display: block;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+
+    .logo-text strong {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      letter-spacing: -0.02em;
+    }
+
+    .logo-text span {
+      font-size: 0.6rem;
+      font-weight: 500;
+      color: var(--color-accent);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--color-text);
+      font-weight: 500;
+      font-size: 0.85rem;
+      letter-spacing: -0.01em;
+      transition: color 0.2s;
+      font-style: normal;
+    }
+
+    .nav-links a:hover {
+      color: var(--color-accent);
+    }
+
+    /* ---------- HERO — FULL VIEWPORT COVER ---------- */
+    .hero {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      min-height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      padding: 60px 24px;
+      position: relative;
+      margin: 0;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      margin-bottom: 18px;
+      color: #fff;
+      text-shadow: 0 4px 14px rgba(0,0,0,0.5);
+      line-height: 1.15;
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2.2vw, 1.25rem);
+      font-weight: 400;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #f0f0f0;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    /* ---------- CARD GRID (International adventures) ---------- */
+    .grid {
+      display: grid;
+      gap: 32px;
+    }
+
+    .dest-card {
+      background: #ffffff;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .dest-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+    }
+
+    .dest-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      background: #e8e4dd;
+    }
+
+    .dest-info {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .dest-info h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    .dest-info p {
+      font-size: 0.92rem;
+      color: var(--color-text-muted);
+      margin-bottom: 8px;
+    }
+
+    .dest-info p strong {
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+
+    .dest-info .btn {
+      margin-top: auto;
+      align-self: flex-start;
+      padding: 10px 22px;
+      font-size: 0.75rem;
+    }
+.itinerary-card {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 0;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  margin-bottom: 2rem;
+}
+
+.itinerary-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.itinerary-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: sticky;
+  top: 0;
+}
+
+.itinerary-body {
+  padding: 2rem 2.2rem;
+}
+
+.itinerary-body h3 {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-bottom: 1.2rem;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid var(--color-accent);
+  display: inline-block;
+}
+
+.itinerary-body p {
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.85;
+  white-space: pre-line;
+}
+
+.itinerary-body .meta {
+  margin-top: 1.5rem;
+  padding: 0.9rem 1.2rem;
+  background: var(--color-bg-light);
+  border-left: 4px solid var(--color-accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  letter-spacing: 0.02em;
+  border-radius: 4px;
+}
+
+    /* ---------- INQUIRY FORM ---------- */
+    .inquiry-section {
+      background: var(--color-bg-light);
+      padding: 72px 24px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .form-container {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .form-container h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      color: var(--color-primary);
+    }
+
+    .form-container .form-sub {
+      font-size: 1rem;
+      color: var(--color-text-muted);
+      margin-bottom: 40px;
+      font-weight: 400;
+    }
+
+    .inquiry-form {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group label {
+      font-family: var(--font-main);
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-primary);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 15px 18px;
+      font-family: var(--font-main);
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--color-text);
+      background: #ffffff;
+      border: 1px solid #d9d3c9;
+      border-radius: 5px;
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      -webkit-appearance: none;
+      appearance: none;
+      font-style: normal;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.12);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%231e3a2f' d='M6 8L2 4h8z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 18px center;
+      background-size: 12px;
+      padding-right: 48px;
+    }
+
+    .btn-submit {
+      align-self: flex-start;
+      background: var(--color-accent);
+      color: var(--color-white);
+      font-family: var(--font-main);
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 16px 40px;
+      border: 2px solid var(--color-accent);
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+      margin-top: 8px;
+    }
+
+    .btn-submit:hover {
+      background: var(--color-accent-hover);
+      border-color: var(--color-accent-hover);
+    }
+
+    .form-message {
+      margin-top: 20px;
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: #1e7a3f;
+      background: #e8f5ec;
+      padding: 14px 18px;
+      border-left: 4px solid #1e7a3f;
+      border-radius: 4px;
+      display: none;
+    }
+
+    .form-message.show {
+      display: block;
+    }
+
+    /* ---------- FOOTER (with logo) ---------- */
+    .site-footer {
+      background: var(--color-primary);
+      color: #d8d8d8;
+      padding: 56px 0 28px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .footer-logo {
+      max-width: 100px;
+      height: auto;
+      display: block;
+      margin-bottom: 14px;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+
+    .footer-col h4 {
+      color: #ffffff;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .footer-col p,
+    .footer-col ul {
+      font-size: 0.88rem;
+      line-height: 1.9;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-col ul li a {
+      color: #c8c8c8;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--color-accent);
+    }
+
+    .footer-col a {
+      color: #c8c8c8;
+      text-decoration: none;
+    }
+
+    .footer-col a:hover {
+      color: var(--color-accent);
+    }
+
+    .footer-col i {
+      color: var(--color-accent);
+      margin-right: 6px;
+      font-style: normal;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-top: 40px;
+      padding: 20px 24px 0;
+      font-size: 0.78rem;
+      color: #a5a5a5;
+      text-align: center;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 768px) {
+      .hero {
+        min-height: 90vh;
+        background-attachment: scroll;
+      }
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      .hero-sub {
+        font-size: 1rem;
+      }
+      .section-title {
+        font-size: 1.5rem;
+      }
+      .site-header .container {
+        flex-direction: column;
+        gap: 14px;
+      }
+      .nav-links {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .inquiry-section {
+        padding: 48px 16px;
+      }
+      .btn-submit {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .grid {
+        grid-template-columns: 1fr !important;
+      }
+      .itinerary-grid {
+        grid-template-columns: 1fr;
+      }
+      .logo img {
+        height: 42px;
+      }
+      .logo-text strong {
+        font-size: 0.95rem;
+      }
+      .hero {
+        min-height: 85vh;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- ===== NAVIGATION (copy from index) ===== -->
-    <header class="site-header" id="siteHeader">...</header>
+    <!-- ===== HEADER (with logo) ===== -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="images/logo.jpeg" alt="Dream Package Adventures logo" />
+        <div class="logo-text">
+          <strong>Dream Package Adventures</strong>
+          <span>Safari &amp; Travel</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="kenya-safaris.html">Safaris</a></li>
+        <li><a href="local-adventures.html">Local</a></li>
+        <li><a href="#inquiry">Contact</a></li>
+      </ul>
+    </div>
+  </header>
 
     <!-- ===== HERO ===== -->
     <section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/intl-hero.jpg'); min-height: 50vh;">
@@ -34,10 +660,388 @@
                 <div class="dest-card"><img src="images/intl-dubai.jpg" alt="Dubai" loading="lazy" /><div class="dest-info"><h3>Dubai</h3><p>Burj Khalifa, desert safaris, shopping, and theme parks.</p><p>4 nights from <strong>$900</strong></p><a href="contact.html" class="btn btn-primary">Enquire Now</a></div></div>
                 <div class="dest-card"><img src="images/intl-mauritius.jpg" alt="Mauritius" loading="lazy" /><div class="dest-info"><h3>Mauritius</h3><p>Pristine beaches, volcanic mountains, and luxury resorts.</p><p>6 nights from <strong>$1,300</strong></p><a href="contact.html" class="btn btn-primary">Enquire Now</a></div></div>
                 <div class="dest-card"><img src="images/intl-china.jpg" alt="China" loading="lazy" /><div class="dest-info"><h3>China</h3><p>Great Wall, pandas, modern cities, and ancient temples.</p><p>10 nights from <strong>$2,100</strong></p><a href="contact.html" class="btn btn-primary">Enquire Now</a></div></div>
+                <div class="dest-card"><img src="images/intl-malaysia.jpg" alt="Malaysia" loading="lazy" /><div class="dest-info"><h3>Malaysia</h3><p>Tropical rainforests, vibrant cities, and diverse wildlife.</p><p>8 nights from <strong>$1,600</strong></p><a href="contact.html" class="btn btn-primary">Enquire Now</a></div></div>
             </div>
         </div>
     </section>
 
-    <!-- ===== FOOTER, WHATSAPP, CHATBOT (copy) ===== -->
+    <!-- ===== ITINERARIES ===== -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Sample Itineraries</h2>
+        <p class="section-sub">Each package can be customized to your preferences and travel dates.</p>
+    <div class="itinerary-card">
+          <div class="itinerary-image">
+            <img src="images/maldives-6d.jpg" alt="6 Days Maldives" loading="lazy" />
+          </div>
+          <div class="itinerary-body">
+            <h3>Maldives: 6 Days of Reefs and Island Calm</h3>
+            <p>Turquoise lagoons, coral reefs and powder-white sandbanks set the scene for six unhurried days. This itinerary pairs resort relaxation with the ocean encounters and local culture that make the Maldives far more than a beach holiday.
+
+Day 1: Arrival and First Sunset
+Land at Velana International Airport in Malé and transfer to your resort by speedboat or seaplane. After check-in, slip into the water for a first snorkel on the house reef, then finish the day with dinner on the sand as the sun goes down.
+
+Day 2: Lagoon, Spa and Sandbank
+Spend the morning snorkelling over the reef or paddleboarding across the lagoon. After lunch, unwind with a treatment in an overwater spa room, then head to a private sandbank for drinks and a picnic at golden hour.
+
+Day 3: Manta Rays and Dolphins
+Join an excursion to see manta rays or, in season, whale sharks, especially rewarding around Ari Atoll. Beginners can book a guided snorkel or introductory dive. As the day cools, a sunset cruise often brings spinner dolphins racing alongside the boat.
+
+Day 4: Local Island Life
+Visit a local island such as Maafushi to see everyday Maldivian life. Try traditional dishes like mas huni and fish curry, browse the small shops, then spend the afternoon on the designated bikini beach, where swimwear is allowed.
+
+Day 5: A Slow Day on the Water
+Paddle a kayak or sail a catamaran around the calm atoll waters, then take a free afternoon by the pool or in a hammock. In the evening, try night fishing or walk the shoreline, where glowing bioluminescent plankton sometimes lights up the water.
+
+Day 6: Farewell
+Take one last sunrise swim before checkout, and leave a generous buffer for seaplane schedules on the way back to Malé. If your flight allows, visit the fish market and the historic Hukuru Miskiy mosque before departing.</p>
+            <div class="meta">Best time to visit: December to April</div>
+          </div>
+        </div>
+
+        <div class="itinerary-card">
+          <div class="itinerary-image">
+            <img src="images/za-7d.jpg" alt="7 Days from Cape Town to Kruger" loading="lazy" />
+          </div>
+          <div class="itinerary-body">
+            <h3>South Africa: 7 Days from Cape Town to Kruger</h3>
+            <p>Begin with Cape Town's mountain-backed coastline and vineyard valleys, then fly north for a classic safari in the Kruger region. It is one trip with two very different kinds of wild beauty.
+
+Day 1: Arrive in Cape Town
+Settle in and stroll the V&A Waterfront, with its harbour views, markets and restaurants. Later, ride the rotating cable car up Table Mountain for sunset over the city and the Atlantic.
+
+Day 2: The Cape Peninsula
+Drive the dramatic Chapman's Peak road, then stop at Boulders Beach to watch African penguins waddle along the shore. Finish at Cape Point, where a short walk leads to the lighthouse and the southwestern tip of the continent.
+
+Day 3: Stellenbosch and Franschhoek Winelands
+Spend the day tasting wines at estates set among mountain-ringed valleys. Travel between them on the wine tram, and enjoy a long lunch overlooking the vines.
+
+Day 4: History, Colour and a Flight North
+Start with a ferry tour to Robben Island, where Nelson Mandela was imprisoned (book ahead, as tours can sell out). In the afternoon, wander the bright streets of Bo-Kaap, the Cape Malay quarter. In the evening, fly to Hoedspruit or Nelspruit for Kruger.
+
+Day 5: First Safari Day
+Head out at dawn on a game drive, when big cats and elephants are most active. Rest at the lodge through the midday heat, then set out again in the golden light of late afternoon.
+
+Day 6: Bush Walk and Boma Dinner
+Follow a ranger on a guided bush walk to track footprints and learn about the smaller details of the bush. Spend the afternoon at rivers and waterholes to watch hippos, crocodiles and birdlife, then dine around the fire in the lodge's boma.
+
+Day 7: Final Drive and Departure
+Take one last sunrise drive for a final chance at the Big Five, then travel home via Johannesburg.</p>
+            <div class="meta">Best time to visit: November to March for Cape Town; June to September for Kruger</div>
+          </div>
+        </div>
+
+      </div>
+
+        <div class="itinerary-card">
+          <div class="itinerary-image">
+            <img src="images/dubai-5d.jpg" alt="5 Days Dubai Skyline, Souks and Desert" loading="lazy" />
+          </div>
+          <div class="itinerary-body">
+            <h3>Dubai: 5 Days of Skyline, Souks and Desert</h3>
+            <p>Dubai is a city in the United Arab Emirates, and this itinerary covers its towering modern landmarks, its historic creekside districts, the desert and a day trip to neighbouring Abu Dhabi.
+
+Day 1: Downtown Dubai
+Ride to the observation deck of the Burj Khalifa, the world's tallest building, ideally around sunset. Afterwards, explore the Dubai Mall and its aquarium, then watch the free Dubai Fountain show after dark.
+
+Day 2: Old Dubai
+Wander the wind-tower houses and small museums of the Al Fahidi Historical District. Cross Dubai Creek by traditional wooden abra, then haggle for gold, spices and textiles in the souks.
+
+Day 3: Beaches and Icons
+Spend the morning at Jumeirah Beach with views towards Palm Jumeirah and the Atlantis resort. Stop for photos of the sail-shaped Burj Al Arab, then finish at Madinat Jumeirah, whose waterways and restaurants are especially lovely in the evening.
+
+Day 4: Museum of the Future and Desert Safari
+Begin at the Museum of the Future, with immersive exhibits on technology and what lies ahead. In the afternoon, head into the dunes for dune bashing, a camel ride and sunset over the sand, followed by a barbecue dinner, live entertainment and stargazing at a desert camp.
+
+Day 5: Day Trip to Abu Dhabi
+Drive about 90 minutes to Abu Dhabi. Visit the Sheikh Zayed Grand Mosque (modest dress is required, and women should bring a headscarf), then spend the afternoon at the Louvre Abu Dhabi, an art museum beneath a striking floating dome.
+</p>
+            <div class="meta">Best time to visit: November to March</div>
+          </div>
+        </div>
+
+        <div class="itinerary-card">
+          <div class="itinerary-image">
+            <img src="images/mauritius-6d.jpg" alt="6 Days Mauritius Beach and Wildlife Safari" loading="lazy" />
+          </div>
+          <div class="itinerary-body">
+            <h3>Mauritius: 6 Days of Beaches, Waterfalls and Islands</h3>
+            <p>Circle the island from the lively north through Port Louis, the rainforest and coloured-earth dunes of the southwest, and out to the sandy islets of the east coast.
+
+Day 1: Grand Baie
+Arrive and settle into Grand Baie, a lively northern base with restaurants and a sheltered bay. Swim in the afternoon and enjoy dinner by the water at sunset.
+
+Day 2: Catamaran and Botanical Gardens
+Sail by catamaran to Coin de Mire and the northern islets to swim and snorkel, with a barbecue lunch on board. Later, visit Pamplemousses Botanical Garden to see giant water lilies and long-lived tortoises.
+
+Day 3: Port Louis
+Browse the Central Market for fresh produce and street snacks such as dholl puri. Visit Aapravasi Ghat, the UNESCO site that tells the story of indentured labour, then relax with shops and cafes along the Caudan Waterfront.
+
+Day 4: The Southwest Uplands
+See the striped dunes of the Seven Coloured Earth and the tall Chamarel Falls. Hike to viewpoints in Black River Gorges National Park, then end with a rum tasting at the Rhumerie de Chamarel.
+
+Day 5: Dolphins and Le Morne
+Take an early boat trip from Tamarin to watch dolphins, then spend the late morning on the white sand and turquoise shallows of Île aux Bénitiers. Finish at sunset with views of Le Morne Brabant, the dramatic UNESCO-listed mountain rising from the shore.
+
+Day 6: Île aux Cerfs and Departure
+Take a boat from Trou d'Eau Douce to Île aux Cerfs for a final swim and a seafood lunch. The airport is in the southeast, so it is an easy transfer in the afternoon.</p>
+            <div class="meta">Best time to visit: May to December</div>
+          </div>
+        </div>
+
+        <div class="itinerary-card">
+          <div class="itinerary-image">
+            <img src="images/china-7d.jpg" alt="7 Days China Tour" loading="lazy" />
+          </div>
+          <div class="itinerary-body">
+            <h3>China: 7 Days from Beijing to Shanghai</h3>
+            <p>Travel through three very different cities: the imperial capital, the ancient Silk Road city of Xi'an and futuristic Shanghai. High-speed trains and a short flight link them.
+
+Day 1: Imperial Beijing
+Start at vast Tiananmen Square, then step into the Forbidden City, the former imperial palace (book tickets ahead). Climb Jingshan Park in the late afternoon for a view across the palace rooftops.
+
+Day 2: The Great Wall
+Visit the Great Wall at Mutianyu, a restored section that is less crowded than Badaling, and ride the toboggan back down. In the evening, enjoy Peking duck, the city's signature dish.
+
+Day 3: Temples, Hutongs and the Train to Xi'an
+Explore the Ming-era Temple of Heaven, where locals gather each morning to exercise and play music in the park. In the afternoon, wander the hutong alleyways by bike or rickshaw, then take the evening high-speed train to Xi'an, about four and a half hours away.
+
+Day 4: The Terracotta Army
+See the thousands of life-size clay soldiers guarding China's first emperor. Back in the city, rent a bike to ride along the top of the Xi'an City Wall, then eat your way through the Muslim Quarter, with street food such as roujiamo and biangbiang noodles.
+
+Day 5: Xi'an to Shanghai
+Visit the Big Wild Goose Pagoda and its Tang-dynasty history in the morning, then take the two-hour flight to Shanghai. After dark, walk the Bund for the colonial-era waterfront and the glittering Pudong skyline across the river.
+
+Day 6: Old and New Shanghai
+Begin at Yu Garden, a Ming-dynasty garden beside the old town. Spend the afternoon among the tree-lined streets, cafes and boutiques of the French Concession, and finish with views from the observation deck of Shanghai Tower.
+
+Day 7: Water Town and Departure
+Take a morning trip to Zhujiajiao, a canal town about an hour from the city. Return in time for your flight from Pudong Airport, and allow extra time if you ride the maglev train.</p>
+            <div class="meta">Best time to visit: April to May and September to October</div>
+          </div>
+        </div>
+
+        <div class="itinerary-card">
+          <div class="itinerary-image">
+            <img src="images/malaysia-7d.jpg" alt="7 Days Malaysia Tour" loading="lazy" />
+          </div>
+          <div class="itinerary-body">
+            <h3>Malaysia: 7 Days of Cities, Food and Islands</h3>
+            <p>Move from the skyscrapers of Kuala Lumpur to the colonial heritage of Melaka and Penang, and finish on the beaches and limestone cliffs of Langkawi. Food is a highlight at every stop.
+
+Day 1: Kuala Lumpur
+Photograph the Petronas Twin Towers and, if tickets are available, cross the skybridge. Relax in KLCC Park, then head to Jalan Alor for satay, noodles and grilled fish at the city's famous street-food strip.
+
+Day 2: Temples, Mosques and Markets
+Climb the rainbow-coloured steps to the limestone cave temple at Batu Caves. Visit the National Mosque and the excellent Islamic Arts Museum, then spend the afternoon shopping at Central Market and in Bukit Bintang.
+
+Day 3: Day Trip to Melaka
+Travel about two hours to Melaka, a historic port city. Explore Dutch Red Square and the A Famosa fort, then browse the night market on Jonker Street and take a river cruise in the evening.
+
+Day 4: George Town, Penang
+Take the one-hour flight to Penang. Walk through George Town's street art and heritage shophouses, visit the wooden stilt homes of the Clan Jetties, and end the day with char kway teow, laksa and cendol at a hawker stall near Gurney Drive.
+
+Day 5: Hills, Temples and Beach
+Ride the funicular up Penang Hill for cooler air and wide views. Visit the sprawling Kek Lok Si Buddhist temple, then watch the sunset from Batu Ferringhi Beach.
+
+Day 6: Langkawi
+Travel by short flight or ferry to Langkawi. In the afternoon, ride the SkyCab gondola and cross the Sky Bridge for views over the islands, then have dinner on the sand at Pantai Cenang.
+
+Day 7: Mangroves and Departure
+Take a boat tour through the mangroves of the Kilim Geoforest to see limestone cliffs, monkeys and eagles. Pick up duty-free treats and souvenirs before connecting onward from Langkawi Airport.</p>
+            <div class="meta">Best time to visit: December to March (west coast)</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== INQUIRY FORM ===== -->
+  <section id="inquiry" class="inquiry-section">
+    <div class="form-container">
+      <h2>Safari Trip Inquiry</h2>
+      <p class="form-sub">Tell us about your dream trip — we'll craft the perfect itinerary.</p>
+
+      <form class="inquiry-form" id="safariForm" novalidate>
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="fullName" placeholder="e.g. Jane Doe" autocomplete="name" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="Enter your number" autocomplete="tel" />
+        </div>
+
+        <div class="form-group">
+          <label for="country">Select Country</label>
+          <select id="country" name="country" required>
+            <option value="" disabled selected>— Please choose an option —</option>
+            <option value="Maldives">Maldives</option>
+            <option value="South Africa">South Africa</option>
+            <option value="Dubai">Dubai</option>
+            <option value="Mauritius">Mauritius</option>
+             <option value="China">China</option>
+            <option value="Malaysia">Malaysia</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="startDate">Start Date</label>
+          <input type="date" id="startDate" name="startDate" required />
+        </div>
+
+        <div class="form-group">
+          <label for="endDate">End Date</label>
+          <input type="date" id="endDate" name="endDate" required />
+        </div>
+
+        <div class="form-group">
+          <label for="adults">Number of Adults</label>
+          <input type="number" id="adults" name="adults" min="1" value="1" required />
+        </div>
+
+        <div class="form-group">
+          <label for="children">Number of Children</label>
+          <input type="number" id="children" name="children" min="0" value="0" />
+        </div>
+
+        <div class="form-group">
+          <label for="address">Address</label>
+          <textarea id="address" name="address" rows="6" placeholder="Your full address"></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Submit</button>
+
+        <div class="form-message" id="formMessage">Thanks, we'll be in touch shortly.</div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER (with logo) ===== -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <img src="images/logo.jpeg" alt="Dream Package Adventures logo" class="footer-logo" />
+        <h4>Dream Package Adventures</h4>
+        <p>Crafting unforgettable journeys across East Africa — from coastal escapes to gorilla trekking.</p>
+        <p><i class="fas fa-phone"></i> <a href="tel:+254758273319">+254 758 273 319</a></p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:info@dreampackageadventures.com">info@dreampackageadventures.com</a></p>
+        <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="kenya-safaris.html">Kenya Safaris</a></li>
+          <li><a href="tanzania-safaris.html">Tanzania Safaris</a></li>
+          <li><a href="uganda-safaris.html">Uganda Safaris</a></li>
+          <li><a href="botswana-safaris.html">Botswana Safaris</a></li>
+          <li><a href="local-adventures.html">Local Getaways</a></li>
+          <li><a href="international-packages.html">International Packages</a></li>
+          <li><a href="car-and-chopper-hire.html">Vehicle &amp; Chopper Hire</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#inquiry">Contact</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <ul>
+          <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+          <li><a href="#"><i class="fab fa-tiktok"></i> TikTok</a></li>
+          <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Dream Package Adventures. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- ===== JAVASCRIPT (validation + inline success) ===== -->
+  <script>
+    (function() {
+      const form = document.getElementById('safariForm');
+      const messageEl = document.getElementById('formMessage');
+
+      function getDateValue(id) {
+        const el = document.getElementById(id);
+        return el ? el.value : '';
+      }
+
+      function validateForm() {
+        const country = document.getElementById('country').value;
+        const startDate = getDateValue('startDate');
+        const endDate = getDateValue('endDate');
+        const adults = document.getElementById('adults').value;
+
+        if (!country || !startDate || !endDate || !adults || parseInt(adults) < 1) {
+          alert('Please fill in country, start date, end date, and at least 1 adult.');
+          return false;
+        }
+
+        if (new Date(endDate) < new Date(startDate)) {
+          alert('End date must be on or after the start date.');
+          return false;
+        }
+
+        return true;
+      }
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        if (!validateForm()) {
+          return;
+        }
+
+        const formData = {
+          fullName: document.getElementById('fullName').value.trim(),
+          email: document.getElementById('email').value.trim(),
+          phone: document.getElementById('phone').value.trim(),
+          country: document.getElementById('country').value,
+          startDate: document.getElementById('startDate').value,
+          endDate: document.getElementById('endDate').value,
+          adults: parseInt(document.getElementById('adults').value, 10),
+          children: parseInt(document.getElementById('children').value, 10) || 0,
+          address: document.getElementById('address').value.trim()
+        };
+
+        console.log('Form data ready to send:', formData);
+
+        messageEl.classList.add('show');
+
+        setTimeout(() => {
+          messageEl.classList.remove('show');
+        }, 6000);
+      });
+
+      const startInput = document.getElementById('startDate');
+      const endInput = document.getElementById('endDate');
+      if (startInput && endInput) {
+        startInput.addEventListener('change', function() {
+          if (endInput.value && endInput.value < startInput.value) {
+            endInput.value = startInput.value;
+          }
+          endInput.min = startInput.value;
+        });
+      }
+    })();
+  </script>
+
 </body>
 </html>
